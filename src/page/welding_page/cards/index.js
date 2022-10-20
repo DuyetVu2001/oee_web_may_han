@@ -76,7 +76,7 @@ const Card = ({ data }) => {
 				padding: '12px 8px',
 			}}
 		>
-			<h3 style={{ textAlign: 'center', color: data?.status === '1' ? 'green' : 'red' }}>
+			<h3 style={{ fontSize: 20, textAlign: 'center', color: data?.status === '1' ? 'green' : 'red' }}>
         {data.id || 'Not found .id'}
       </h3>
 
