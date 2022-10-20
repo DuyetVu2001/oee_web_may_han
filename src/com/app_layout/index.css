@@ -1,0 +1,78 @@
+
+.ant-menu-inline-collapsed .ant-menu-item.ant-menu-item-selected {
+    margin-left: 1.5px;
+    border-left: 3px solid #1890ff !important;
+    border-right: none;
+    background-color: #ddd !important;
+    color: black;
+    transform: scale(1.05);
+    height: 30px;
+    display: flex;
+    align-items: center;
+    padding-top: 2px !important;
+}
+
+.ant-menu-light .ant-menu-item:hover, .ant-menu-light .ant-menu-item-active, .ant-menu-light .ant-menu:not(.ant-menu-inline) .ant-menu-submenu-open, .ant-menu-light .ant-menu-submenu-active, .ant-menu-light .ant-menu-submenu-title:hover{
+    color: black;
+}
+.ant-menu:not(.ant-menu-horizontal) .ant-menu-item-selected {
+    background: #aaa;
+}
+
+
+.ant-menu-item:hover {
+    background: #aaa;
+    color: black;
+}
+.ant-menu-item {
+    color: black;
+}
+
+.ant-menu-item.ant-menu-item-selected .anticon.ant-menu-item-icon {
+    margin-left: -3px;
+}
+
+body::-webkit-scrollbar {
+    width: 0px;
+    height: 0px;
+}
+
+body::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+}
+
+body::-webkit-scrollbar-thumb {
+    background-color: red;
+    outline: 1px solid red;
+}
+
+
+
+.ant-table-tbody::-webkit-scrollbar {
+    width: 10px;
+}
+
+.ant-table-tbody::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+}
+
+.ant-table-tbody::-webkit-scrollbar-thumb {
+    background-color: red;
+    outline: 1px solid red;
+}
+
+.ro-custom .anticon {
+    color: #1890ff;
+}
+/* dnd_note */
+.ant-card-head {
+    margin-top: -15px;
+}
+.ant-menu-item:hover {
+    background: #aaa;
+    color: black;
+}
+
+/* .ant-tabs-top > .ant-tabs-nav, .ant-tabs-bottom > .ant-tabs-nav, .ant-tabs-top > div > .ant-tabs-nav, .ant-tabs-bottom > div > .ant-tabs-nav{
+    margin: 0 0 8px 0;
+} */

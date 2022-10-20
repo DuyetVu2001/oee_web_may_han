@@ -1,0 +1,293 @@
+{
+  "dn": "ユーザー名",
+  "login": {
+    "user_name": "ユーザー名",
+    "password": " パスワード",
+    "title": "全体的なパフォーマンス監視ソフトウェア",
+    "login": "ログイン",
+    "title_header": "Asset performance management",
+    "sub_header": ""
+  },
+  "noti": {
+    "noti": "通知する",
+    "success": "正常にログインしました！",
+    "fail": "アカウントが正しくありません",
+    "conf_logout": "Confirm logout?(nhật)",
+    "innoti": "You don't have any notifications(N)",
+    "del_all": "Delete all(N)",
+    "see_more": "See more(N)"
+  },
+  "profile": {
+    "log_out": " ログアウト",
+    "user_info": "ユーザー情報",
+    "user_name": "ユーザー名",
+    "name": "名前",
+    "phone": "電話",
+    "email": "Eメール",
+    "role": "役割",
+    "line": "ライン",
+    "hidden_machine": "hidden machine",
+    "change_pw": "パスワードを変更する"
+  },
+  "introduce": {
+    "software": "ソフトウェアパフォーマンスモニター",
+    "line_one": "CMC Technology and solution",
+    "line_two": "電話: +84 92 6868666",
+    "line_three": "ウェブサイト",
+    "line_four": "Toà nhà CMC , số 11 Duy Tân, Cầu Giấy, HN",
+    "intro": "導入"
+  },
+  "manage_account": {
+    "change_adm": "Edit admin account information(N)",
+    "see_cNange": "View / Edit(N)",
+    "del": "Delete(N)",
+    "op": "Operation(N)",
+    "change_pw": "パスワードを変更する",
+    "manage_acc": "アカウントを管理する",
+    "user_name": "ユーザー名",
+    "name": "名前",
+    "phone": "電話",
+    "email": "Eメール",
+    "role": "役割",
+    "line": "ライン",
+    "new_pass": "New password(N)",
+    "conf_pass": "Confirm password(N)",
+    "edit_pass": "Change account password(N)",
+    "old_pass": "Old Password(N)"
+  },
+  "analysis": {
+    "ana_data": "데이터분석"
+  },
+  "home" : {
+    "title":"表示機能を選択",
+    "machine_monitor" : "機械監視",
+    "area_monitor" : "エリアモニタリング",
+    "power_minitor" : "電力監視",
+    "operate" : "操作する"
+  },
+  "report_oee":{
+    "name":"OEEレポート"
+  },
+  "statistics": {
+    "oee-statistics":"OEE-統計学",
+    "pro-statistics": "製品統計",
+    "power_statistic":"電力統計",
+    "filter": "フィルター",
+    "plan_code": "プランコード",
+    "machine_code": "マシンコード",
+    "mold_code": "金型コード",
+    "product_code": "製品コード",
+    "nb_plan": "ナンブルプラン",
+    "act_nb": "実際の数",
+    "time_start": "始まる時間",
+    "time_end": "終了時間",
+    "cav": "Cavity",
+    "c_time": "Cycle time",
+    "export_data": "データのエクスポート",
+    "oee":"統計OEE"
+  },
+  "managerError": {
+    "ma_error": "マネージャーエラー",
+    "machine_name": "マシン名",
+    "status": "状態",
+    "time": "時間",
+    "period": "期間(N)",
+    "type_er": "タイプエラー(N)",
+    "sel_err": "エラータイプを選択",
+    "sel_machine": "マシンを選択",
+    "id": "id(N)",
+    "name_err": "Error name(N)",
+    "time_err": "Error time(N)",
+    "name_machine": "Machine name(N)",
+    "note": "Note(N)",
+    "edit_info": "Edit information(N)",
+    "add_err": "More errors(N)",
+    "see_change": "View / Edit(N)",
+    "del": "Delete(N)",
+    "action": "Action(N)"
+  },
+  "genaral_settings": {
+    "general_settings": "一般設定",
+    "time_ss": "画面切り替え時間",
+    "intro_plan": "工場情報",
+    "send_data": "データを送信する HMI",
+    "code_err": "エラーコードを分割する"
+  },
+  "planning": {
+    "planning": "予定",
+    "samp_plan": "サンプルプラン",
+    "rep_plan": "プランを置き換える",
+    "upd_plan": "更新計画",
+    "cus_code": "顧客コード",
+    "machine_code": "機械語",
+    "time_plan": "タイムプラン",
+    "time_start": "始まる時間",
+    "time_end": "終了時間",
+    "c_time": "Cycle time",
+    "name_plan": "ネームプラン",
+    "mold": "型",
+    "time": "タイム",
+    "type": "タイプ",
+    "machine": "マシーン",
+    "all": "全て",
+    "un-plan": "計画の更新を解除",
+    "upload_un_pl": "アップデート",
+    "dw_un_pl": "ダウンロードプラン",
+    "add": "新しく追加する",
+    "reload": "リロード",
+    "code_cus": "お客様のコード",
+    "sel_line": "行を選択",
+    "sel_machine": "マシンを選択",
+    "sel_status": "ステータスを選択",
+    "sel_": "タイプを選択",
+    "total": "Total cavity(N)",
+    "time_day": "Scheduled time (days)(N)",
+    "time_h": "Scheduled time (hours)(N)",
+    "id": "id(N)"
+  },
+  "statistics_machine": {
+    "statistics_machine": "マシンステータス統計",
+    "chart_day": "日ごとのマシンステータスチャート",
+    "chart_machine": "マシン状態図",
+    "statistics_status": "マシンステータス統計",
+    "act": "アクティブ",
+    "stop": "やめる",
+    "err": "エラー",
+    "per_tb": "平均パフォーマンス"
+  },
+  "action": {
+    "run": "ランニング",
+    "err": "エラー",
+    "stop": "ストップ",
+    "change_mold": "型を変える",
+    "qua": "品質",
+    "others": "または"
+  },
+  "status": {
+    "active": "Active(N)",
+    "err": "Trouble(N)",
+    "stop": "Stop(N)",
+    "lost_signal": "Lost signal(N)"
+  },
+  "title": {
+    "machine_monitor": "Machine monitoring(N)",
+    "statistics_machine": "Machine status statistics(N)",
+    "planning": "Planning(N)",
+    "setting": "Setting(N)",
+    "ma_error": "Error management(N)",
+    "pro-statistics": "Production statistics(N)",
+    "ana_data": "Data analysis(N)",
+    "manage_acc": "Account Management(N)",
+    "user_info": "Account Information(N)",
+    "info": "Introduce(N)"
+  },
+  "email" :{
+    "title":"通知する",
+    "title_daily":"日報",
+    "reset":"更新",
+    "add" :"新しく追加する",
+    "del" : "消去"
+  },
+  "account_title" : {
+    "account" : "アカウント",
+    "staff" : "スタッフ",
+    "group" : "グループ"
+  }
+  ,
+  "setting" : {
+    "down":"엑셀 다운로드",
+    "del" : "消去",
+    "reset" : "更新",
+    "add" : "新しく追加する",
+    "filter" : "フィルター",
+    "show" : "画面",
+    "import":"輸入",
+    "export":"書き出す",
+    "template_price":"テンプレート価格",
+    "upload_price":"アップロード価格"
+  },
+  "setting_title" : {
+    "product" : "集合体データ",
+    "err" : "エラーリスト",
+    "enterprise" : "ビジネス情報",
+    "work_shift" : "シフト",
+    "device" : "情報機器",
+    "machine" : "マシングループのリスト",
+    "ng" : "スクラップコード"
+  },
+  "working_shift":{
+    "work_shift":"シフト"
+  },
+  "tvlink":{
+    "area":"エリアモニタリング",
+    "machine":"機械監視",
+    "operator":"オペレーターの監視",
+    "power":"電力監視"
+  },
+  "change_view":{
+    "view" : "ビューを変更",
+    "table_view":"テーブルビュー",
+    "chart_view":"チャートビュー"
+  },
+  "route" : {
+    "home" : "Home",
+    "statistic" : "統計",
+    "setting" : "設定",
+    "account_manager" : "アカウント管理",
+    "account" : "アカウント",
+    "about" : "私たちに関しては",
+    "report" : "報告",
+    "monitor" : "モニター",
+    "send_email" : "メールを送る"
+  },
+  "about_us":{
+    "address":"주소",
+    "name":"회사",
+    "phone":"電話",
+    "email":"郵便物",
+    "website":"Website"
+    },
+    "router_setting" : {
+      "product":"製造",
+      "error_code":"エラーコード",
+      "ng_code":"Ngコード",
+      "enterprise":"企業",
+      "working_shift":"勤務シフト",
+      "device":"デバイス",
+      "group_device":"グループデバイス"
+    },
+    "statistic_setting":{
+      "production_statistic":"生産統計",
+      "machine_statistic":"マシン統計",
+      "oee_machine":"OEEマシン",
+      "power_statistic":"電力統計",
+      "report_statistic":"レポートチャート"
+    },
+    "email_setting":{
+      "error_email":"エラー",
+      "daily_email":"毎日"
+    },
+    "account":{
+      "account":"アカウント",
+      "staff":"スタッフ",
+      "group":"グループ"
+    },
+    "tvlink_setting":{
+      "name":"名前",
+      "link":"リンク",
+      "copy":"コピー",
+      "description":"説明"
+    },
+    "table_monitor": {
+      "product": "商品名",
+      "target": "目標",
+      "actual": "実際",
+      "qty_report":"実際の数量",
+      "ng": "NG",
+      "staff": "スタッフ",
+      "group": "グループ",
+      "shift": "勤務シフト",
+      "start_time": "始まる時間",
+      "end_time": "終了時間"
+    }
+}

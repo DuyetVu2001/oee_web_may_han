@@ -1,0 +1,11 @@
+{
+    "apps": [
+        {
+            "name": "be-proxy-5010",
+            "script": "server/reverse_proxy.js",
+            "max_memory_restart": "500M",
+            "args": "5010",
+            "watch": true
+        }
+    ]
+}

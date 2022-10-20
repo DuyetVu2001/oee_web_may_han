@@ -1,0 +1,10 @@
+{
+  "apps": [
+    {
+      "name": "oee-cedo-fe:3007",
+      "script": "npx",
+      "interpreter": "none",
+      "args": "serve -l 3007 -s build"
+    }
+  ]
+}

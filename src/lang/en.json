@@ -1,0 +1,339 @@
+{
+  "dn": "Username",
+  "login": {
+    "user_name": "Username",
+    "password": "Password",
+    "title": "OVERALL PERFORMANCE MONITORING SOFTWARE",
+    "login": "Login",
+    "title_header": "Overall equipment effectiveness",
+    "sub_header": ""
+  },
+  "noti": {
+    "noti": "Notify",
+    "success": "Logged in successfully!",
+    "fail": "Incorrect account",
+    "conf_logout": "Confirm logout?",
+    "innoti": "You don't have any notifications",
+    "del_all": "Delete all",
+    "see_more": "See more"
+  },
+  "profile": {
+    "log_out": "LogOut",
+    "user_info": "UserInfo",
+    "user_name": "Username",
+    "name": "Name",
+    "phone": "Phone",
+    "email": "Email",
+    "role": "Role",
+    "line": "Line",
+    "hidden_machine": "hidden machine",
+    "change_pw": "Change password"
+  },
+  "introduce": {
+    "software": "Comprehensive asset performance management solution C-APM",
+    "intro": "Introduce",
+    "line_one": "CMC Technology and Solutions Corporation",
+    "line_two": "Phone: +84 92 6868666",
+    "line_three": "Website",
+    "line_four": "CMC Building, 11 Duy Tan, Cau Giay, Hanoiy"
+  },
+  "manage_account": {
+    "change_adm": "Edit admin account information",
+    "see_change": "View / Edit",
+    "del": "Delete",
+    "op": "Operation",
+    "change_pw": "Change password",
+    "user_name": "Username",
+    "manage_acc": "Manage Account",
+    "name": "Name",
+    "phone": "Phone",
+    "email": "Email",
+    "role": "Role",
+    "line": "Line",
+    "new_pass": "New password",
+    "conf_pass": "Confirm password",
+    "edit_pass": "Change account password",
+    "old_pass": "Old Password"
+  },
+  "analysis": {
+    "ana_data": "Data Analysis "
+  },
+  "report_oee": {
+    "name": "Report OEE"
+  },
+  "statistics": {
+    "oee-statistics": "OEE Statistics",
+    "pro-statistics": "Product Statistics Planned",
+    "pro-statistics-no-plan": "Product Statistics No Planned",
+    "power_statistic": "Power Statistics",
+    "filter": "Filter",
+    "plan_code": "Plan code",
+    "machine_code": "Machine code",
+    "mold_code": "Mold code",
+    "product_code": "Product code",
+    "nb_plan": "Numble plan",
+    "act_nb": "Actual numble",
+    "time_start": "Start time",
+    "time_end": "End Time",
+    "cav": "Cavity",
+    "c_time": "Cycle time",
+    "export_data": "Export data",
+    "oee": "Statistics OEE"
+  },
+  "managerError": {
+    "ma_error": "Manager Error",
+    "machine_name": "Machine name",
+    "status": "Status",
+    "time": "Time",
+    "period": "Peroid",
+    "sel_err": "Select error type",
+    "sel_machine": "Select machine",
+    "id": "id",
+    "type_er": "Type error",
+    "name_err": "Error name",
+    "time_err": "Error time",
+    "name_machine": "Machine name",
+    "note": "Note",
+    "edit_info": "Edit information",
+    "add_err": "More errors",
+    "see_change": "View / Edit",
+    "del": "Delete",
+    "action": "Action"
+  },
+  "general_settings": {
+    "general_settings": "General settings",
+    "time_ss": "Screen switching time",
+    "intro_plan": "Factory Information",
+    "send_data": "Send data down HMI",
+    "code_err": "Devide error code"
+  },
+  "planning": {
+    "planning": "Plan",
+    "samp_plan": "Sample plan",
+    "rep_plan": "Replace plan",
+    "upd_plan": "Update plan",
+    "cus_code": "Custommer code",
+    "machine_code": "Machine code",
+    "time_plan": "Time plan",
+    "time_start": "Start time",
+    "time_end": "End time",
+    "c_time": "Cycle time",
+    "name_plan": "Name plan",
+    "mold": "Mold",
+    "time": "Time",
+    "type": "Type",
+    "machine": "Machine",
+    "all": "All",
+    "un-plan": "Un-Planed",
+    "upload_un_pl": "Update Un-plan",
+    "dw_un_pl": "Down Un-Planed",
+    "add": "Add new",
+    "reload": "Reload",
+    "code_cus": "Customer's code",
+    "sel_line": "Select line",
+    "sel_machine": "Select machine",
+    "sel_status": "Select status",
+    "sel_": "Select type",
+    "total": "Total cavity",
+    "time_day": "Scheduled time (days)",
+    "time_h": "Scheduled time (hours)",
+    "id": "id"
+  },
+  "statistics_machine": {
+    "statistics_machine": "Machine status statistics",
+    "chart_day": "Machine status chart by day",
+    "chart_machine": "Machine State Diagram",
+    "statistics_status": "Machine status statistics",
+    "act": "Active",
+    "stop": "Stop",
+    "err": "Error",
+    "per_tb": "Average performance"
+  },
+  "action": {
+    "run": "RUNNING",
+    "err": "ERROR",
+    "stop": "STOP",
+    "change_mold": "CHANGE MOLD",
+    "qua": "QUALITY",
+    "others": "OTHERS"
+  },
+  "status": {
+    "active": "Active",
+    "err": "Trouble",
+    "stop": "Stop",
+    "lost_signal": "Lost signal"
+  },
+  "title": {
+    "machine_monitor": "Machine monitoring",
+    "statistics_machine": "Machine status statistics",
+    "planning": "Planning",
+    "setting": "Setting",
+    "ma_error": "Error management",
+    "pro-statistics": "Production statistics",
+    "ana_data": "Data analysis",
+    "manage_acc": "Account Management",
+    "user_info": "Account Information",
+    "info": "Introduce"
+  },
+  "setting": {
+    "down": "Download Excel",
+    "del": "Delete",
+    "reset": "Reset",
+    "add": "Add new",
+    "filter": "Filter",
+    "show": "Show",
+    "import": "Import",
+    "export": "Export",
+    "template_price": "Template price",
+    "upload_price": "Upload price"
+  },
+  "setting_title": {
+    "product": "Aggregate Data",
+    "err": "List Of Err",
+    "enterprise": "Information Enterprise",
+    "work_shift": "Shift",
+    "device": "Device Information",
+    "area": "Area Information",
+    "line": "Line Information",
+    "machine_info": "Machine Information",
+    "machine": "List Of Machine Groups",
+    "ng": "Ng Code"
+  },
+  "account_title": {
+    "account": "User list",
+    "staff": "The list of Employee",
+    "group": "Team list"
+  },
+  "working_shift": {
+    "id": "Id",
+    "work_shift": "Work shift",
+    "time_zone": "TimeZone",
+    "day_start": "Operation date",
+    "start_time": "Start time",
+    "end_time": "End time",
+    "machine": "Machine"
+  },
+  "machine": {
+    "change_pr": "Change Production",
+    "stop_change_mold": "Stop change mold",
+    "edit_pr": "Edit Production",
+    "set_ng": "Set NG",
+    "group": "Group",
+    "employee": "Staff",
+    "id": "Id",
+    "time": "Time",
+    "period": "Duration",
+    "state": "State",
+    "err_code": "Err Code"
+  },
+  "route": {
+    "home": "Home",
+    "statistic": "Statistic",
+    "setting": "Setting",
+    "account_manager": "Account Management",
+    "account": "Account",
+    "about": "About us",
+    "report": "Report",
+    "monitor": "Monitor",
+    "send_email": "Send Email"
+  },
+  "home": {
+    "title": "Select display function",
+    "machine_monitor": "Machine monitoring",
+    "area_monitor": "Area monitoring",
+    "power_minitor": "Power monitoring",
+    "operate": "Operate"
+  },
+  "change_view": {
+    "view": "Change view",
+    "table_view": "Table View",
+    "chart_view": "Chart View"
+  },
+  "email": {
+    "title": "Notifications",
+    "title_daily": "Daily report",
+    "reset": "Reload",
+    "add": "Add new",
+    "del": "Delete"
+  },
+  "tvlink": {
+    "area": "Area monitoring",
+    "machine": "Machine monitoring",
+    "operator": "Operate monitoring",
+    "power": "Power monitoring"
+  },
+  "about_us": {
+    "address": "Address",
+    "name": "Company",
+    "phone": "Phone",
+    "email": "Email",
+    "website": "Website"
+  },
+  "router_setting": {
+    "product": "Production",
+    "error_code": "Error Code",
+    "ng_code": "Ng Code",
+    "enterprise": "Enterprise",
+    "working_shift": "Working Shift",
+    "device": "Device",
+    "group_device": "Group Device"
+  },
+  "statistic_setting": {
+    "production_statistic": "Production Statistic",
+    "machine_statistic": "Machine Statistic",
+    "oee_machine": "OEE Machine",
+    "power_statistic": "Power Statistic",
+    "report_statistic": "Other Report"
+  },
+  "email_setting": {
+    "error_email": "Error",
+    "daily_email": "Daily"
+  },
+  "account": {
+    "account": "Account",
+    "staff": "Staff",
+    "group": "Group"
+  },
+  "tvlink_setting": {
+    "name": "Name",
+    "link": "Link",
+    "copy": "Copy",
+    "description": "Description"
+  },
+  "statistic": {
+    "table": "Table",
+    "by_day": "By day",
+    "by_time": "By time",
+    "chart": "Chart",
+    "plan": "Plan",
+    "no_plan": "No Plan"
+  },
+  "table_monitor": {
+    "product": "Product Name",
+    "target": "Target",
+    "actual": "Actual",
+    "qty_report": "Actual Quantity",
+    "ng": "NG",
+    "staff": "Staff",
+    "group": "Group",
+    "shift": "Working Shift",
+    "start_time": "Start Time",
+    "end_time": "End Time"
+  },
+  "table_account": {
+    "id": "ID",
+    "staff_name": "Staff name",
+    "phone": "Phone",
+    "desc": "Description",
+    "group": "Group",
+    "user_name": "Username",
+    "name": "Name",
+    "mail": "Email",
+    "role_id": "Role"
+  },
+  "enterprise": {
+    "line": "line",
+    "area": "area",
+    "machine": "machine"
+  }
+}

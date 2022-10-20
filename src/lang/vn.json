@@ -1,0 +1,364 @@
+{
+  "dn": "Tên đăng nhập",
+  "login": {
+    "user_name": "Tên đăng nhập",
+    "password": "Mật khẩu",
+    "title": "PHẦN MỀM GIÁM SÁT HIỆU SUẤT TỔNG THỂ",
+    "login": "Đăng nhập",
+    "title_header": "Giải pháp quản lý",
+    "sub_header": "Giám sát hiệu suất tổng thể"
+  },
+  "noti": {
+    "noti": "Thông báo",
+    "success": "Đăng nhập thành công!",
+    "fail": "Tài khoản không chính xác",
+    "conf_logout": "Xác nhận đăng xuất",
+    "innoti": "Bạn không có thông báo nào",
+    "del_all": "Xóa tất cả",
+    "see_more": "Xem thêm"
+  },
+  "profile": {
+    "log_out": "Đăng xuất",
+    "user_info": "Thông tin tài khoản",
+    "user_name": "Tên đăng nhập",
+    "name": "Tên",
+    "phone": "Phone",
+    "email": "Email",
+    "role": "Vai trò",
+    "line": "Line",
+    "hidden_machine": "Máy ẩn",
+    "change_pw": "Đổi mật khẩu"
+  },
+  "introduce": {
+    "software": "Giám sát hiệu suất tổng thể",
+    "intro": "Giới Thiệu",
+    "line_one": "Tổng công ty Công nghệ và Giải pháp CMC",
+    "line_two": "Phone: +84 92 6868666",
+    "line_three": "Website",
+    "line_four": "Toà nhà CMC , số 11 Duy Tân, Cầu Giấy, HN"
+  },
+  "manage_account": {
+    "change_adm": "Chỉnh sửa thông tin tài khoản",
+    "see_change": "Xem / Chỉnh sửa",
+    "del": "Xóa",
+    "op": "Thao tác",
+    "change_pw": "Đổi mật khẩu",
+    "manage_acc": "Quản lý tài khoản",
+    "user_name": "Tên đăng nhập",
+    "name": "Tên",
+    "phone": "Phone",
+    "email": "Email",
+    "role": "Vai trò",
+    "line": "Line",
+    "new_pass": "Mật khẩu mới",
+    "conf_pass": "Xác nhận mật khẩu",
+    "edit_pass": "Đổi mật khẩu tài khoản",
+    "old_pass": "Mật khẩu cũ"
+  },
+  "analysis": {
+    "ana_data": "Phân tích dữ liệu"
+  },
+  "report_oee": {
+    "name": "Thống kê OEE"
+  },
+  "statistics": {
+    "oee-statistics": "Thống kê OEE",
+    "pro-statistics": "Thống kê sản lượng theo kế hoạch",
+    "pro-statistics-no-plan": "Thống kê sản lượng ngoài theo kế hoạch",
+    "power_statistic": "Thống kê điện năng",
+    "filter": "Lọc",
+    "plan_code": "Mã kế hoạch",
+    "machine_code": "Mã máy",
+    "mold_code": "Mã khuôn",
+    "product_code": "Mã sản phẩm",
+    "nb_plan": "Sl Kế hoạch",
+    "act_nb": "Sl Thực tế",
+    "time_start": "TG Bắt đầu",
+    "time_end": "TG kết thúc",
+    "cav": "Cavity",
+    "c_time": "Cycle time",
+    "export_data": "Export data",
+    "sel_machine": "Chọn máy",
+    "oee": "Thống kê OEE"
+  },
+  "managerError": {
+    "ma_error": "Quản lý lỗi",
+    "machine_name": "Tên máy",
+    "status": "Trạng thái",
+    "time": "Ngày giờ",
+    "period": "Khoảng thời gian",
+    "sel_err": "Chọn loại lỗi",
+    "sel_machine": "Chọn máy",
+    "id": "id",
+    "type_er": "Loại lỗi",
+    "name_err": "Tên lỗi",
+    "time_err": "Thời gian lỗi",
+    "name_machine": "Tên máy",
+    "note": "Ghi chú",
+    "edit_info": "Chỉnh sửa thông tin",
+    "add_err": "Thêm lỗi",
+    "see_change": "Xem / Chỉnh sửa",
+    "del": "Xóa",
+    "action": "Action"
+  },
+  "general_settings": {
+    "general_settings": "Cài đặt chung",
+    "time_ss": "Thời gian chuyển màn hình",
+    "intro_plan": "Thông tin nhà máy",
+    "send_data": "Gửi dữ liệu xuống HMI",
+    "code_err": "Mã lỗi thiết bị"
+  },
+  "planning": {
+    "planning": "Lập kế hoạch",
+    "samp_plan": "Mẫu kế hoạch",
+    "rep_plan": "Thay thế kế hoạch",
+    "upd_plan": "Update kế hoạch",
+    "cus_code": "Mã KH",
+    "machine_code": "Mã máy",
+    "time_plan": "TG Kế hoạch",
+    "time_start": "TG Bắt đầu",
+    "time_end": "TG kết thúc",
+    "c_time": "Cycle time",
+    "name_plan": "Tên kế hoạch",
+    "mold": "Sản phẩm",
+    "time": "Thời gian",
+    "type": "Loại",
+    "machine": "Máy",
+    "all": "All",
+    "un-plan": "Un-Planed",
+    "upload_un_pl": "Update Un-plan",
+    "dw_un_pl": "Down Un-Planed",
+    "add": "Thêm mới",
+    "reload": "Reload",
+    "code_cus": "Mã khách hàng",
+    "sel_line": "Chọn line",
+    "sel_machine": "Chọn máy",
+    "sel_status": "Chọn trạng thái",
+    "sel_": "Chọn loại",
+    "total": "Tổng cavity",
+    "time_day": "Thời gian theo kế hoach (ngày)",
+    "time_h": "Thời gian theo kế hoach (giờ)",
+    "id": "id"
+  },
+  "statistics_machine": {
+    "statistics_machine": "Thống kê trạng thái máy",
+    "chart_day": "Biểu đồ trạng thái máy theo ngày",
+    "chart_machine": "Biểu đồ trạng thái máy",
+    "statistics_status": "Thống kê trạng thái máy",
+    "act": "Hoạt động",
+    "stop": "Dừng",
+    "err": "Lỗi",
+    "per_tb": "Hiệu suất trung bình",
+    "day": "Máy trong ngày",
+    "machineStt": "Trạng thái máy",
+    "machineSttCon": "Thống kê trạng thái máy"
+  },
+  "action": {
+    "run": "RUNNING",
+    "err": "ERROR",
+    "stop": "STOP",
+    "change_mold": "CHANGE MOLD",
+    "qua": "QUALITY",
+    "others": "OTHERS",
+    "plan": "PLAN",
+    "actual": "ACTUAL"
+  },
+  "status": {
+    "active": "Hoạt động",
+    "err": "Sự cố",
+    "stop": "Dừng",
+    "lost_signal": "Mất tín hiệu"
+  },
+  "title": {
+    "machine_monitor": "Giám sát máy",
+    "statistics_machine": "Thống kê trạng thái máy",
+    "planning": "Lập kế hoạch",
+    "setting": "Cài đặt",
+    "ma_error": "Quản lý lỗi",
+    "pro-statistics": "Thống kê sản lượng",
+    "ana_data": "Phân tích dữ liệu",
+    "manage_acc": "Quản lý tài khoản",
+    "user_info": "Thông tin tài khoản",
+    "info": "Giới thiệu",
+    "mail": "Thông báo"
+  },
+  "setting": {
+    "down": "Download Excel",
+    "del": "Xóa item đã chọn",
+    "reset": "Làm mới",
+    "add": "Thêm mới",
+    "filter": "Bộ lọc",
+    "show": "Hiển thị"
+  },
+  "setting_title": {
+    "product": "Dữ liệu tổng hợp",
+    "err": "Danh sách lỗi",
+    "enterprise": "Thông tin doanh nghiệp",
+    "work_shift": "Ca làm việc",
+    "device": "Thông tin thiết bị",
+    "machine": "Danh sách nhóm máy",
+    "ng": "Mã phế phẩm",
+    "import": "Tải lên",
+    "export": "Tải về",
+    "template_price": "Bảng giá mẫu",
+    "upload_price": "Tải bảng giá lên"
+  },
+  "account_title": {
+    "account": "Danh sách người dùng",
+    "staff": "Danh sách nhân viên",
+    "group": "Danh sách nhóm"
+  },
+  "working_shift": {
+    "id": "Mã",
+    "work_shift": "Ca làm việc",
+    "time_zone": "TimeZone",
+    "day_start": "Ngày hoạt động",
+    "start_time": "Thời gian bắt đầu",
+    "end_time": "Thời gian kết thúc",
+    "machine": "Máy"
+  },
+  "machine": {
+    "change_pr": "Đổi Sản Phẩm",
+    "stop_change_mold": "Kết thúc thay khuôn",
+    "edit_pr": "Sửa MSP",
+    "set_ng": "Phế phẩm",
+    "group": "Nhóm",
+    "employee": "Nhân viên",
+    "id": "Mã",
+    "time": "Thời gian",
+    "period": "Khoảng thời gian",
+    "state": "Trạng thái",
+    "err_code": "Mã lỗi"
+  },
+  "route": {
+    "home": "Home",
+    "statistic": "Thống kê",
+    "setting": "Cài đặt",
+    "tv_link": "TV link",
+    "account_manager": "Quản lý tài khoản",
+    "account": "Tài khoản",
+    "report": "Báo cáo",
+    "about": "About us",
+    "monitor": "Giám sát",
+    "send_email": "Gửi Email"
+  },
+  "home": {
+    "title": "Chọn chức năng hiển thị",
+    "machine_monitor": "Giám sát máy",
+    "area_monitor": "Giám sát khu vực",
+    "power_minitor": "Giám sát điện năng",
+    "operate": "Vận hành",
+    "machine_list": "Danh sách máy",
+    "enterprise_structure": "Cấu trúc nhà máy"
+  },
+  "email": {
+    "title": "Thông báo",
+    "title_daily": "Báo cáo hằng ngày",
+    "reset": "Làm mới",
+    "add": "Thêm mới",
+    "del": "Xóa item đã chọn"
+  },
+  "tvlink": {
+    "area": "Giám sát khu vực",
+    "machine": "Giám sát máy",
+    "operator": "Giám sát vận hành",
+    "power": "Giám sát điện năng"
+  },
+  "change_view": {
+    "view": "Thay đổi hiển thị",
+    "table_view": "Hiển thị dạng bảng",
+    "chart_view": "Hiển thị dạng biểu đồ"
+  },
+  "about_us": {
+    "address": "Địa chỉ",
+    "name": "Công ty",
+    "phone": "Điện thoại",
+    "email": "Email",
+    "website": "Website"
+  },
+  "router_setting": {
+    "product": "Sản phẩm",
+    "error_code": "Mã lỗi",
+    "ng_code": "Mã phế phẩm",
+    "enterprise": "Doanh nghiệp",
+    "working_shift": "Ca làm việc",
+    "device": "Thiết bị",
+    "group_device": "Nhóm thiết bị"
+  },
+  "welding": {
+    "cards": "Thẻ",
+    "charts": "Biểu đồ",
+    "machines": "Quản lý máy"
+  },
+  "welding_title": {
+    "machines": "Quản lý máy",
+    "err": "Danh sách lỗi",
+    "enterprise": "Thông tin doanh nghiệp",
+    "work_shift": "Ca làm việc",
+    "device": "Thông tin thiết bị",
+    "machine": "Danh sách nhóm máy",
+    "ng": "Mã phế phẩm",
+    "import": "Tải lên",
+    "export": "Tải về",
+    "template_price": "Bảng giá mẫu",
+    "upload_price": "Tải bảng giá lên"
+  },
+  "statistic_setting": {
+    "production_statistic": "Thống kê sản xuất",
+    "machine_statistic": "Thống kê theo máy",
+    "oee_machine": "Thống kê OEE",
+    "power_statistic": "Thống kê điện năng",
+    "report_statistic": "Thống kê khác"
+  },
+  "email_setting": {
+    "error_email": "Lỗi",
+    "daily_email": "Email"
+  },
+  "account": {
+    "account": "Tài khoản",
+    "staff": "Nhân viên",
+    "group": "Nhóm"
+  },
+  "tvlink_setting": {
+    "name": "Tên",
+    "link": "Link",
+    "copy": "Sao chép",
+    "description": "Mô tả"
+  },
+  "statistic": {
+    "table": "Danh sách",
+    "by_day": "Theo ngày",
+    "by_time": "Theo thời gian",
+    "chart": "Biểu đồ",
+    "plan": "Kế hoạch",
+    "no_plan": "Ngoài kế hoạch"
+  },
+  "table_monitor": {
+    "product": "Tên sản phẩm",
+    "target": "SL mục tiêu",
+    "actual": "SL thực tế",
+    "qty_report": "SL ghi nhận",
+    "ng": "NG",
+    "staff": "Mã nhân viên",
+    "group": "Tên Nhóm",
+    "shift": "Ca làm việc",
+    "start_time": "Thời gian bắt đầu",
+    "end_time": "Thời gian kết thúc"
+  },
+  "table_account": {
+    "id": "Mã",
+    "staff_name": "Tên nhân viên",
+    "phone": "Số điện thoại",
+    "desc": "Mô tả",
+    "group": "Tên nhóm",
+    "user_name": "Tên đăng nhập",
+    "name": "Tên",
+    "mail": "Email",
+    "role_id": "Phân quyền"
+  },
+  "enterprise": {
+    "line": "line",
+    "area": "Khu vực",
+    "machine": "Máy"
+  }
+}

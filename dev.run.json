@@ -1,0 +1,9 @@
+{
+    "apps": [
+        {
+            "name": "web-oee-dev-3102",
+            "script": "npm",
+            "args": "run start"
+        }
+    ]
+}

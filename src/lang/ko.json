@@ -1,0 +1,292 @@
+{
+  "dn": "사용자 이름",
+  "login": {
+    "user_name": "텐 에앙 냔프",
+    "password": "뭣 꾸우",
+    "title": "전체 성능 모니터링 소프트웨어",
+    "login": "로그인",
+    "title_header": "Asset performance management",
+    "sub_header": ""
+  },
+  "noti": {
+    "noti": "알리다",
+    "success": "성공적으로 로그인했습니다!",
+    "fail": "잘못된 계정",
+    "conf_logout": "Confirm logout?(hàn)",
+    "innoti": "You don't have any notifications(H)",
+    "del_all": "Delete all(H)",
+    "see_more": "See more(H)"
+  },
+  "profile": {
+    "log_out": "로그 아웃",
+    "user_info": "사용자 정보",
+    "user_name": "텐 에앙 냔프",
+    "name": "이름",
+    "phone": "전화 번호",
+    "email": "이메일",
+    "role": "역할",
+    "line": "선",
+    "hidden_machine": "hidden machine",
+    "change_pw": "비밀번호 변경"
+  },
+  "introduce": {
+    "software": "소프트웨어 성능 모니터",
+    "line_one": "CMC Technology and solution",
+    "line_two": "전화 번호: +84 92 6868666",
+    "line_three": "웹사이트",
+    "line_four": "Địa chỉ: 29/521 Trương Định, Tân Mai, Hoàng Mai",
+    "intro": "소개하다"
+  },
+  "manage_account": {
+    "change_adm": "Edit admin account information(H)",
+    "see_change": "View / Edit(H)",
+    "del": "Delete(H)",
+    "op": "Operation(H)",
+    "change_pw": "비밀번호 변경",
+    "manage_acc": "계정 관리",
+    "user_name": "텐 에앙 냔프",
+    "name": "이름",
+    "phone": "전화 번호",
+    "email": "이메일",
+    "role": "역할",
+    "line": "선",
+    "new_pass": "New password(H)",
+    "conf_pass": "Confirm password(H)",
+    "edit_pass": "Change account password(H)",
+    "old_pass": "Old Password(H)"
+  },
+  "analysis": {
+    "ana_data": "데이터 분석"
+  },
+  "home" : {
+    "title":"표시 기능 선택",
+    "machine_monitor" : "기계 모니터링",
+    "area_monitor" : "지역 모니터링",
+    "power_minitor" : "전력 모니터링",
+    "operate" : "작동하다"
+  },
+  "report_oee":{
+    "name":"OEE 보고서"
+  },
+  "statistics": {
+    "oee-statistics":"OEE - 통계",
+    "pro-statistics": "제품 통계",
+    "power_statistic":"전력 통계",
+    "filter": "필터",
+    "plan_code": "계획 코드",
+    "machine_code": "기계 코드",
+    "mold_code": "금형 코드",
+    "product_code": "제품 코드",
+    "nb_plan": "무계획",
+    "act_nb": "실제 숫자",
+    "time_start": "시작 시간",
+    "time_end": "종료 시간",
+    "cav": "Cavity",
+    "c_time": "Cycle time",
+    "export_data": "데이터 내보내기",
+    "oee":"통계 OEE"
+  },
+  "managerError": {
+    "ma_error": "관리자 오류",
+    "machine_name": "기계 이름",
+    "status": "상태",
+    "time": "시각",
+    "period": "기간(H)",
+    "type_er": "유형 오류(H)",
+    "sel_err": "오류 유형 선택",
+    "sel_machine": "기계 선택",
+    "id": "id(H)",
+    "name_err": "Error name(H)",
+    "time_err": "Error time(H)",
+    "name_machine": "Machine name(H)",
+    "note": "Note(H)",
+    "edit_info": "Edit information(H)",
+    "add_err": "More errors(H)",
+    "see_change": "View / Edit(H)",
+    "del": "Delete(H)",
+    "action": "Action(H)"
+  },
+  "general_settings": {
+    "general_settings": "일반 설정",
+    "time_ss": "화면 전환 시간",
+    "intro_plan": "공장 정보",
+    "send_data": "아래로 데이터 보내기 HMI",
+    "code_err": "마 로티 티엣 bị"
+  },
+  "planning": {
+    "planning": "계획",
+    "samp_plan": "샘플 계획",
+    "rep_plan": "계획 교체",
+    "upd_plan": "업데이트 계획",
+    "cus_code": "업데이트 계획",
+    "machine_code": "기계 코드",
+    "time_plan": "시간 계획",
+    "time_start": "시작 시간",
+    "time_end": "종료 시간",
+    "c_time": "Cycle time",
+    "name_plan": "이름 계획",
+    "mold": "곰팡이",
+    "time": "시각",
+    "type": "유형",
+    "machine": "기계",
+    "all": "모두",
+    "un-plan": "업데이트 계획",
+    "upload_un_pl": "업데이트",
+    "dw_un_pl": "다운로드 계획",
+    "add": "새로운 걸 더하다",
+    "reload": "새로고침",
+    "code_cus": "고객의 코드",
+    "sel_line": "라인 선택",
+    "sel_machine": "기계 선택",
+    "sel_status": "상태 선택",
+    "sel_": "유형 선택",
+    "total": "Total cavity(H)",
+    "time_day": "Scheduled time (days)(H)",
+    "time_h": "Scheduled time (hours)(H)",
+    "id": "id(H)"
+  },
+  "statistics_machine": {
+    "statistics_machine": "기계 상태 통계",
+    "chart_day": "일별 기계 상태 차트",
+    "chart_machine": "기계 상태 다이어그램",
+    "statistics_status": "기계 상태 통계",
+    "act": "활동적인",
+    "stop": "중지",
+    "err": "오류",
+    "per_tb": "평균 성능"
+  },
+  "action": {
+    "run": "달리기",
+    "err": "오류",
+    "stop": "멈추다",
+    "change_mold": "금형 변경",
+    "qua": "품질",
+    "others": "기타"
+  },
+  "status": {
+    "active": "Active(H)",
+    "err": "Trouble(H)",
+    "stop": "Stop(H)",
+    "lost_signal": "Lost signal(H)"
+  },
+  "title": {
+    "machine_monitor": "Machine monitoring(H)",
+    "statistics_machine": "Machine status statistics(H)",
+    "planning": "Planning(H)",
+    "setting": "Setting(H)",
+    "ma_error": "Error management(H)",
+    "pro-statistics": "Production statistics(H)",
+    "ana_data": "Data analysis(H)",
+    "manage_acc": "Account Management(H)",
+    "user_info": "Account Information(H)",
+    "info": "Introduce(H)"
+  },
+  "email" :{
+    "title":"알림",
+    "title_daily" :"일일 보고서",
+    "reset":"새로 고치다",
+    "add" :"새로운 걸 더하다",
+    "del" : "삭제"
+  },
+  "account_title" : {
+    "account" : "계정",
+    "staff" : "직원",
+    "group" : "그룹"
+  },
+  "setting" : {
+    "down":"Excelをダウンロード",
+    "del" : "삭제",
+    "reset" : "새로 고치다",
+    "add" : "새로운 걸 더하다",
+    "filter" : "필터",
+    "show" : "표시하다",
+    "import":"수입",
+    "export":"내보내다",
+    "template_price":"템플릿 가격",
+    "upload_price":"가격 업로드"
+  },
+  "setting_title" : {
+    "product" : "데이터 집계",
+    "err" : "오류 목록",
+    "enterprise" : "비즈니스 정보",
+    "work_shift" : "옮기다",
+    "device" : "정보기기",
+    "machine" : "머신 그룹 목록",
+    "ng" : "스크랩 코드"
+  },
+  "working_shift":{
+    "work_shift":"옮기다"
+  },
+  "tvlink":{
+    "area":"지역 모니터링",
+    "machine":"기계 모니터링",
+    "operator":"모니터링 운영",
+    "power":"전력 모니터링"
+  },
+  "change_view":{
+    "view" : "보기 변경",
+    "table_view":"테이블 보기",
+    "chart_view":"차트 보기"
+  },
+  "route" : {
+    "home" : "Home",
+    "statistic" : "통계량",
+    "setting" : "환경",
+    "account_manager" : "계정 관리",
+    "account" : "계정",
+    "about" : "회사 소개",
+    "report" : "보고서",
+    "monitor" : "감시 장치",
+    "send_email" : "이메일을 보내"
+  },
+  "about_us":{
+    "address":"住所",
+    "name":"会社",
+    "phone":"電話",
+    "email":"우편",
+    "website":"웹사이트"
+    },
+    "router_setting" : {
+      "product":"생산",
+      "error_code":"에러 코드",
+      "ng_code":"NG 코드",
+      "enterprise":"기업",
+      "working_shift":"근무 교대",
+      "device":"장치",
+      "group_device":"그룹 장치"
+    },
+    "statistic_setting":{
+      "production_statistic":"생산 통계",
+      "machine_statistic":"기계 통계",
+      "oee_machine":"OEE 기계",
+      "power_statistic":"전력 통계",
+      "report_statistic":"보고서 차트"
+    },
+    "email_setting":{
+      "error_email":"오류",
+      "daily_email":"일일"
+    },
+    "account":{
+      "account":"계정",
+      "staff":"직원",
+      "group":"그룹"
+    },
+    "tvlink_setting":{
+      "name":"이름",
+      "link":"링크",
+      "copy":"복사",
+      "description":"설명"
+    },
+    "table_monitor": {
+      "product": "상품명",
+      "target": "표적",
+      "actual": "실제",
+      "qty_report":"실제 수량",
+      "ng": "NG",
+      "staff": "직원",
+      "group": "그룹",
+      "shift": "근무 교대",
+      "start_time": "시작 시간",
+      "end_time": "종료 시간"
+    }
+}
