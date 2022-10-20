@@ -76,10 +76,9 @@ const Card = ({ data }) => {
 				padding: '12px 8px',
 			}}
 		>
-			{/* machine name */}
-			<h3 style={{ textAlign: 'center', color: 'white' }}>
-				{data.id || 'Not found .id'}
-			</h3>
+			<h3 style={{ textAlign: 'center', color: data?.status === '1' ? 'green' : 'red' }}>
+        {data.id || 'Not found .id'}
+      </h3>
 
 			<p
 				style={{
