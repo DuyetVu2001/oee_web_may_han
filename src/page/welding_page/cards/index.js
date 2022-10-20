@@ -15,7 +15,7 @@ const Cards = () => {
 		_requestRealtimeData();
 		const inter = setInterval(() => {
 			_requestRealtimeData();
-		}, 1000 * 10);
+		}, 1000 * 4);
 
 		return () => {
 			clearInterval(inter);
