@@ -232,6 +232,7 @@
   },
   "route": {
     "home": "Home",
+    "welding": "Welding",
     "statistic": "Thống kê",
     "setting": "Cài đặt",
     "tv_link": "TV link",

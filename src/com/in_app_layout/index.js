@@ -92,7 +92,7 @@ const App = ({ children, title = '' }) => {
                                 <i className="fa-solid fa-bars-staggered"></i>
                             </div>
                             <LeftMenu />
-                            <div onClick={() => dispatch(requestLogout())} style={{
+                            {/* <div onClick={() => dispatch(requestLogout())} style={{
                                 position: 'absolute', bottom: 35,
                                 textAlign: 'center',
                                 left: 0, right: 0,
@@ -102,7 +102,7 @@ const App = ({ children, title = '' }) => {
                             }}>
                                 <LogoutOutlined style={{ color: 'red', fontSize: 20 }} />
                                 <span style={{ marginLeft: 20, color: '#111' }}>Logout</span>
-                            </div>
+                            </div> */}
                         </Layout.Sider>}
                     <Layout style={{
                         marginLeft: marginContent,
@@ -159,7 +159,7 @@ const LeftMenu = React.memo(() => {
     const history = useHistory();
     let { path } = useRouteMatch();
     // let { pathname } = useLocation();
-    const { userrole } = useSelector(state => state.app)
+    // const { userrole } = useSelector(state => state.app)
     const route = UseRouter()
     const selectedKeys = React.useMemo(() => {
         const listKey = route.map(m => `${m.path}`);

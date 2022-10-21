@@ -18,6 +18,8 @@ import {
 	requestEdit,
 	requestTable,
 } from './state/table';
+import { Button, Tooltip } from 'antd';
+import { ReloadOutlined } from '@ant-design/icons';
 
 const TableFunction = () => {
 	// state
@@ -56,7 +58,19 @@ const TableFunction = () => {
 
 	return (
 		<div style={{}}>
-			<CardCustom title={t(`${lang}.machines`)}>
+			<CardCustom
+				title={t(`${lang}.machines`)}
+				extra={
+					<Tooltip title="Reload" placement="bottom">
+						<Button
+							onClick={_requestDataTable}
+							loading={loading}
+							shape="round"
+							icon={<ReloadOutlined />}
+						/>
+					</Tooltip>
+				}
+			>
 				<TableCustom
 					dataSource={dataTable}
 					columns={configState?.listColumn}

@@ -21,9 +21,11 @@ const WeldingPage = () => {
 				{ROUTER_MAP.map(({ exact = true, ...route }) => {
 					return (
 						<Route
-							key={`${path}/${route.path}`}
-							exact={exact}
-							path={`${path}/${route.path}`}
+						exact={exact}
+							// key={`${path}/${route.path}`}
+							// path={`${path}/${route.path}`}
+							key={`/${route.path}`}
+							path={`/${route.path}`}
 						>
 							<route.Com />
 						</Route>
@@ -43,7 +45,8 @@ const TabsMenu = React.memo(() => {
 	const { t } = useTranslation();
 
 	const selectedKeys = React.useMemo(() => {
-		const listKey = ROUTER_MAP.map((m) => `${path}/${m.path}`);
+		// const listKey = ROUTER_MAP.map((m) => `${path}/${m.path}`);
+		const listKey = ROUTER_MAP.map((m) => `/${m.path}`);
 		return listKey.find((i) => i.includes(pathname)) || listKey[0];
 	}, [path, pathname]);
 
@@ -61,7 +64,8 @@ const TabsMenu = React.memo(() => {
 			{ROUTER_MAP.map((route) => (
 				<Tabs.TabPane
 					style={{ padding: 0 }}
-					key={`${path}/${route.path}`}
+					// key={`${path}/${route.path}`}
+					key={`/${route.path}`}
 					tab={
 						<Button className="ro-custom" border={false} type="text">
 							{t(route.name)}

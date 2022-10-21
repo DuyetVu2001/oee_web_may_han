@@ -4,26 +4,32 @@ import { openNotificationWithIcon } from 'helper/request/notification_antd';
 import React, { useState } from 'react';
 
 import { BtnTus } from 'com/btn_tutorial';
+import ReloadBtn from 'com/reload_btn';
 
 const ENDPOINT = 'http://localhost:3888';
+const LOCAL_STORAGE_UNIQUE_KEY = 'cards_reload_time';
 
 const Cards = () => {
 	const [loading, setLoading] = React.useState(false);
 	const [machineShow, setMachineShow] = useState();
+	const [reloadTime, setReloadTime] = useState(
+		localStorage.getItem(LOCAL_STORAGE_UNIQUE_KEY) || 10
+	);
 
 	React.useEffect(() => {
 		_requestRealtimeData();
 		const inter = setInterval(() => {
 			_requestRealtimeData();
-		}, 1000 * 4);
+		}, 1000 * reloadTime);
 
 		return () => {
 			clearInterval(inter);
 		};
-	}, []);
+	}, [reloadTime]);
 
 	const _requestRealtimeData = () => {
 		setLoading(true);
+
 		axios
 			.get(`${ENDPOINT}/voltage/cards`)
 			.then(({ data }) => setMachineShow(data?.data || []))
@@ -35,8 +41,33 @@ const Cards = () => {
 			});
 	};
 
+	const handleReloadTime = (time) => {
+		setReloadTime(time);
+
+		localStorage.setItem(LOCAL_STORAGE_UNIQUE_KEY, time);
+	};
+
 	return (
-		<div style={{ margin: 'auto', overflow: 'hidden', padding: 8 }}>
+		<div
+			style={{ margin: 'auto', overflow: 'hidden', padding: 8, paddingTop: 0 }}
+		>
+			<div
+				style={{
+					marginBottom: 22,
+					display: 'flex',
+					justifyContent: 'space-between',
+				}}
+			>
+				<div className=""></div>
+
+				<ReloadBtn
+					reloadTime={reloadTime}
+					handleReloadTime={handleReloadTime}
+					handleReloadBtn={_requestRealtimeData}
+					loading={loading}
+				/>
+			</div>
+
 			<Row
 				gutter={[
 					{ xs: 6, sm: 12 },
@@ -76,9 +107,15 @@ const Card = ({ data }) => {
 				padding: '12px 8px',
 			}}
 		>
-			<h3 style={{ fontSize: 20, textAlign: 'center', color: data?.status === '1' ? 'green' : 'red' }}>
-        {data.id || 'Not found .id'}
-      </h3>
+			<h3
+				style={{
+					fontSize: 20,
+					textAlign: 'center',
+					color: data?.status === '1' ? 'green' : 'red',
+				}}
+			>
+				{data.id || 'Not found .id'}
+			</h3>
 
 			<p
 				style={{

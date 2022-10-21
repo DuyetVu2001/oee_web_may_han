@@ -10,7 +10,8 @@ import { GeneralHeader } from '../../com/app_layout/general_header';
 import { useEffect } from 'react';
 
 function PrivateRoute({ children, ...rest }) {
-    const isLogin = useSelector(isLoginSelector);
+    // const isLogin = useSelector(isLoginSelector);
+    const isLogin = true;
     return (
         <Route
             {...rest}
