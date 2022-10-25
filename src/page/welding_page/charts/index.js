@@ -13,6 +13,21 @@ import { LoadingOutlined } from '@ant-design/icons';
 const ENDPOINT = 'http://localhost:3888';
 const LOCAL_STORAGE_UNIQUE_KEY = 'charts_reload_time';
 
+const FILTER_TYPES = [
+	{
+		id: 1,
+		label: '1h',
+	},
+	{
+		id: 24,
+		label: '24h',
+	},
+	{
+		id: 30,
+		label: '30 days',
+	},
+];
+
 const Charts = () => {
 	const [loading, setLoading] = useState(false);
 	const [reloadTime, setReloadTime] = useState(
@@ -20,6 +35,11 @@ const Charts = () => {
 	);
 
 	const [machinesName, setMachinesName] = useState();
+
+	const [filterTypeSelected, setFilterTypeSelected] = useState(
+		FILTER_TYPES[0].id
+	);
+	const [machineNameSelected, setMachineNameSelected] = useState();
 
 	const [options, setOptions] = useState({
 		xAxis: {
@@ -35,9 +55,16 @@ const Charts = () => {
 	});
 
 	useEffect(() => {
-		axios
-			.get(`${ENDPOINT}/machines`)
-			.then((res) => setMachinesName(res.data?.data.map((item) => item.id)));
+		axios.get(`${ENDPOINT}/machines`).then((res) => {
+			const machines = res.data?.data?.map((item) => item.id);
+
+			setMachinesName(machines);
+			setMachineNameSelected(machines[0]);
+		});
+	}, [reloadTime]);
+
+	useEffect(() => {
+		if (!machineNameSelected) return () => {};
 
 		_requestRealtimeData();
 		const inter = setInterval(() => {
@@ -47,12 +74,19 @@ const Charts = () => {
 		return () => {
 			clearInterval(inter);
 		};
-	}, [reloadTime]);
+	}, [
+		reloadTime,
+		machineNameSelected,
+		filterTypeSelected,
+		machineNameSelected,
+	]);
 
 	const _requestRealtimeData = () => {
 		setLoading(true);
 		axios
-			.get(`${ENDPOINT}/voltage/line-chart`)
+			.get(
+				`${ENDPOINT}/voltage/line-chart?type=${filterTypeSelected}&machineId=${machineNameSelected}`
+			)
 			.then((res) => {
 				const data = res.data?.data || [];
 
@@ -104,35 +138,67 @@ const Charts = () => {
 				}}
 			>
 				<div style={{ display: 'flex', alignItems: 'center' }}>
-					{machinesName ? (
-						<>
-							<p
-								style={{
-									marginRight: 6,
-									marginBottom: 'unset',
-									fontWeight: 600,
-								}}
-							>
-								Chọn máy:
-							</p>
+					<div style={{ display: 'flex', alignItems: 'center' }}>
+						{machinesName ? (
+							<>
+								<p
+									style={{
+										marginRight: 6,
+										marginBottom: 'unset',
+										fontWeight: 600,
+									}}
+								>
+									Chọn máy:
+								</p>
 
-							<Select
-								style={{ width: 120 }}
-								defaultValue={machinesName?.[0]}
-								optionLabelProp="label"
-							>
-								{machinesName?.map((i) => {
-									return (
-										<Select.Option value={i} label={i}>
-											<div>{i}</div>
-										</Select.Option>
-									);
-								})}
-							</Select>
-						</>
-					) : (
-						<LoadingOutlined />
-					)}
+								<Select
+									style={{ width: 120 }}
+									defaultValue={machinesName?.[0]}
+									optionLabelProp="label"
+									onChange={setMachineNameSelected}
+								>
+									{machinesName?.map((i) => {
+										return (
+											<Select.Option value={i} label={i}>
+												<div>{i}</div>
+											</Select.Option>
+										);
+									})}
+								</Select>
+							</>
+						) : (
+							<LoadingOutlined />
+						)}
+					</div>
+
+					<div
+						style={{ display: 'flex', alignItems: 'center', marginLeft: 16 }}
+					>
+						<p
+							style={{
+								marginRight: 6,
+								marginBottom: 'unset',
+								fontWeight: 600,
+							}}
+						>
+							Lọc:
+						</p>
+
+						<Select
+							style={{ width: 96 }}
+							defaultValue={FILTER_TYPES[0].id}
+							optionLabelProp="label"
+							onChange={setFilterTypeSelected}
+						>
+							{FILTER_TYPES.map((i) => {
+								return (
+									<Select.Option value={i.id} label={i.label}>
+										<div>{i.label}</div>
+									</Select.Option>
+								);
+							})}
+						</Select>
+					</div>
 				</div>
 
 				<ReloadBtn
