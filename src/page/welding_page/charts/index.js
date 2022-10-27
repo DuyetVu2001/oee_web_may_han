@@ -55,8 +55,8 @@ const Charts = () => {
 	});
 
 	useEffect(() => {
-		axios.get(`${ENDPOINT}/machines`).then((res) => {
-			const machines = res.data?.data?.map((item) => item.id);
+		axios.get(`${ENDPOINT}/machines/name`).then((res) => {
+			const machines = res.data;
 
 			setMachinesName(machines);
 			setMachineNameSelected(machines[0]);
@@ -90,12 +90,12 @@ const Charts = () => {
 			.then((res) => {
 				const data = res.data?.data || [];
 
-				const xAxis = data['m001']?.map((item) =>
-					moment.unix(item.time).format('MM:HH DD/MM/YYYY')
-				);
+				const xAxis = Object.values(data)?.[0]?.map((item) =>
+				moment.unix(item.time).format('MM:HH DD/MM/YYYY')
+			)
 
 				const series = Object.keys(data).map((item) => ({
-					data: data[item]?.map((item2) => item2.value) || [],
+					data: data[item]?.map((item2) => +item2.value) || [],
 					name: item,
 				}));
 
