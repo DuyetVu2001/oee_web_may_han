@@ -109,13 +109,28 @@ const Card = ({ data }) => {
 		>
 			<h3
 				style={{
-					fontSize: 20,
+					fontSize: 22,
 					textAlign: 'center',
 					color: data?.status === '1' ? 'green' : 'red',
 				}}
 			>
 				{data.id || 'Not found .id'}
+				<p style={{ margin: 'unset', fontSize: 15}}>({data.status === 1 ? "online" : "offline"})</p>
 			</h3>
+
+			<div style={{
+						display: 'flex',
+						alignItems: 'center',
+						justifyContent: 'space-between',
+						padding: '0 8px',
+
+						color: 'white',
+						fontSize: 18,
+						fontWeight: 500,
+					}}>
+				<p style={{ margin: 'unset'}}>Runtime</p>
+				<p style={{ margin: 'unset'}}>{data.runtime}</p>
+			</div>
 
 			<p
 				style={{
