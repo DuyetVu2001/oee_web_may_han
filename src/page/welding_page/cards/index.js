@@ -115,7 +115,7 @@ const Card = ({ data }) => {
 				}}
 			>
 				{data.id || 'Not found .id'}
-				<p style={{ margin: 'unset', fontSize: 15}}>({data.status === 1 ? "online" : "offline"})</p>
+				<p style={{ margin: 'unset', fontSize: 15}}>({data?.status === '1' ? "online" : "offline"})</p>
 			</h3>
 
 			<div style={{
