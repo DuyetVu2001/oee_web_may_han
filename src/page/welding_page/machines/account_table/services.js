@@ -21,6 +21,6 @@ export const updateListColumn = (body) =>
 const ENDPOINT1 = 'http://localhost:3888/machines';
 
 export const get = (body) => axios.get(`${ENDPOINT1}`, body);
-export const patch = (body) => axios.put(`${ENDPOINT1}/${body.id}`, body);
+export const patch = (body) => axios.put(`${ENDPOINT1}`, body);
 export const getPatchForm = (body) => axios.get(`${ENDPOINT1}/patch`, body);
 export const getListColumn = () => axios.get(`${ENDPOINT1}/table`);
