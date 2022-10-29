@@ -18,7 +18,7 @@ export const getPostForm = (body) => apiClient.get(`${ENDPOINT}/post`, body);
 export const updateListColumn = (body) =>
 	apiClient.patch(`${ENDPOINT}/column`, body);
 
-const ENDPOINT1 = 'http://localhost:3888/machines';
+const ENDPOINT1 = 'http://192.168.1.44:3888/machines';
 
 export const get = (body) => axios.get(`${ENDPOINT1}`, body);
 export const patch = (body) => axios.put(`${ENDPOINT1}`, body);

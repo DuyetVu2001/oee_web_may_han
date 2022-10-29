@@ -6,7 +6,7 @@ import React, { useState } from 'react';
 import { BtnTus } from 'com/btn_tutorial';
 import ReloadBtn from 'com/reload_btn';
 
-const ENDPOINT = 'http://localhost:3888';
+const ENDPOINT = 'http://192.168.1.44/:3888';
 const LOCAL_STORAGE_UNIQUE_KEY = 'cards_reload_time';
 
 const Cards = () => {

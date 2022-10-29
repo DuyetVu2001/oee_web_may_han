@@ -10,7 +10,7 @@ import { useEffect } from 'react';
 import ReloadBtn from 'com/reload_btn';
 import { LoadingOutlined } from '@ant-design/icons';
 
-const ENDPOINT = 'http://localhost:3888';
+const ENDPOINT = 'http://192.168.1.44:3888';
 const LOCAL_STORAGE_UNIQUE_KEY = 'charts_reload_time';
 
 const FILTER_TYPES = [
