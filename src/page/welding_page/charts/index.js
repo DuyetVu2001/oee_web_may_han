@@ -9,14 +9,14 @@ import { useState } from 'react';
 import { useEffect } from 'react';
 import ReloadBtn from 'com/reload_btn';
 import { LoadingOutlined } from '@ant-design/icons';
+import { TEST_HOST } from '_config/constant';
 
-const ENDPOINT = 'http://192.168.1.44:3888';
 const LOCAL_STORAGE_UNIQUE_KEY = 'charts_reload_time';
 
 const FILTER_TYPES = [
 	{
 		id: 1,
-		label: '1h',
+		label: '1 day',
 	},
 	{
 		id: 24,
@@ -55,7 +55,7 @@ const Charts = () => {
 	});
 
 	useEffect(() => {
-		axios.get(`${ENDPOINT}/machines/name`).then((res) => {
+		axios.get(`${TEST_HOST}/machines/name`).then((res) => {
 			const machines = res.data;
 
 			setMachinesName(machines);
@@ -85,14 +85,14 @@ const Charts = () => {
 		setLoading(true);
 		axios
 			.get(
-				`${ENDPOINT}/voltage/line-chart?type=${filterTypeSelected}&machineId=${machineNameSelected}`
+				`${TEST_HOST}/voltage/line-chart?type=${filterTypeSelected}&machineId=${machineNameSelected}`
 			)
 			.then((res) => {
 				const data = res.data?.data || [];
 
 				const xAxis = Object.values(data)?.[0]?.map((item) =>
-				moment.unix(item.time).format('MM:HH DD/MM/YYYY')
-			)
+					moment.unix(item.time).format('MM:HH DD/MM/YYYY')
+				);
 
 				const series = Object.keys(data).map((item) => ({
 					data: data[item]?.map((item2) => +item2.value) || [],

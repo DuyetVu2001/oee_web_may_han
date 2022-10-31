@@ -5,8 +5,8 @@ import React, { useState } from 'react';
 
 import { BtnTus } from 'com/btn_tutorial';
 import ReloadBtn from 'com/reload_btn';
+import { TEST_HOST } from '_config/constant';
 
-const ENDPOINT = 'http://192.168.1.44:3888';
 const LOCAL_STORAGE_UNIQUE_KEY = 'cards_reload_time';
 
 const Cards = () => {
@@ -31,7 +31,7 @@ const Cards = () => {
 		setLoading(true);
 
 		axios
-			.get(`${ENDPOINT}/voltage/cards`)
+			.get(`${TEST_HOST}/voltage/cards`)
 			.then(({ data }) => setMachineShow(data?.data || []))
 			.catch((err) => {
 				openNotificationWithIcon('error', JSON.stringify(err));

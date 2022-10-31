@@ -27,3 +27,5 @@ export const ROLE = {
     MANAGER: 4,
     EMPLOYEE: 5,
 }
+
+export const TEST_HOST = 'http://192.168.1.44:3888'

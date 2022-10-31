@@ -1,6 +1,7 @@
 import { apiClient } from '../../../../helper/request/api_client';
 import { ENDPOINT } from './const';
 import axios from 'axios';
+import { TEST_HOST } from '_config/constant';
 
 // export const get = (params) => apiClient.get(ENDPOINT, params);
 export const post = (body) => apiClient.post(ENDPOINT, body);
@@ -18,9 +19,7 @@ export const getPostForm = (body) => apiClient.get(`${ENDPOINT}/post`, body);
 export const updateListColumn = (body) =>
 	apiClient.patch(`${ENDPOINT}/column`, body);
 
-const ENDPOINT1 = 'http://192.168.1.44:3888/machines';
-
-export const get = (body) => axios.get(`${ENDPOINT1}`, body);
-export const patch = (body) => axios.put(`${ENDPOINT1}`, body);
-export const getPatchForm = (body) => axios.get(`${ENDPOINT1}/patch`, body);
-export const getListColumn = () => axios.get(`${ENDPOINT1}/table`);
+export const get = (body) => axios.get(`${TEST_HOST}/machines`, body);
+export const patch = (body) => axios.put(`${TEST_HOST}/machines`, body);
+export const getPatchForm = (body) => axios.get(`${TEST_HOST}/machines/patch`, body);
+export const getListColumn = () => axios.get(`${TEST_HOST}/machines/table`);
