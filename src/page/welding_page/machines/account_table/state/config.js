@@ -4,29 +4,29 @@ import * as services from '../services';
 export const initialStateConfig = {
 	formAdd: [],
 	formEdit: [
-		{
-			label:"Mã máy",
-			name:"id"
-		},
-		{
-			label:"Loại dây",
-			name:"wire_diameter"
-		},
-		{
-			label:"Status",
-			name:"status",
-			type:"select",
-			data:[
-				{
-					id: true,
-					name: "On"
-				},
-				{
-					id: false,
-					name: "Off"
-				}
-			]
-		}
+		// {
+		// 	label:"Mã máy",
+		// 	name:"id"
+		// },
+		// {
+		// 	label:"Loại dây",
+		// 	name:"wire_diameter"
+		// },
+		// {
+		// 	label:"Status",
+		// 	name:"status",
+		// 	type:"select",
+		// 	data:[
+		// 		{
+		// 			id: true,
+		// 			name: "On"
+		// 		},
+		// 		{
+		// 			id: false,
+		// 			name: "Off"
+		// 		}
+		// 	]
+		// }
 	],
 	formFilter: [],
 	listColumn: [],
