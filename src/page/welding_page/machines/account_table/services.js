@@ -24,4 +24,4 @@ export const patch = (body) => axios.put(`${TEST_HOST}/machines`, body);
 export const getPatchForm = (body) => axios.get(`${TEST_HOST}/machines/patch`, body);
 export const getListColumn = () => axios.get(`${TEST_HOST}/machines/table`);
 
-export const patchStatus = (body) => apiClient.get(`${TEST_HOST}/voltage/cards`,body);
+export const patchStatus = (body) => axios.patch(`${TEST_HOST}/machines/permission`, body);

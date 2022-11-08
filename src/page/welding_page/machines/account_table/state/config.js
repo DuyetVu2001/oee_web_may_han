@@ -18,10 +18,12 @@ export const initialStateConfig = {
 			type:"select",
 			data:[
 				{
-					id:1, name:"1",label:"On"
+					id: true,
+					name: "On"
 				},
 				{
-					id:2, name:"2", label:"Off"
+					id: false,
+					name: "Off"
 				}
 			]
 		}

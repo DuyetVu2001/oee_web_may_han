@@ -69,23 +69,24 @@ export const requestAddNew = async (body, cb , _onClose = () => {}) => {
         handleErr(err)
     }
 }
-export const requestEdit = async (body, cb ,_onClose = () => {}) => {
+export const requestEdit = async (body, cb, _onClose = () => { }) => {
+    
+    console.log(body);
 
     try {
         // const {data} = await services.patch(body);
-        const {status,...rest} = body;
-        const {data} = await services.patch(rest);
-        const result = await services.patchStatus({
-            "id" : body.id,
-            "status":status,
-            "active":true
-        })
-        console.log("Machine: ", rest);
-        console.log("Machine123: ", result);
+        const { status, ...rest } = body;
+        await Promise.all([
+            services.patch(rest),
+            services.patchStatus({
+                "id" : body.id,
+                "allowReading":status,
+            }
+        )])
         
-        openNotificationWithIcon("success", data?.msg)
-        openNotificationWithIcon("success", result?.msg)
-        openNotificationWithIcon('success', data?.msg,result?.msg)
+        openNotificationWithIcon("success", "Success!")
+        // openNotificationWithIcon("success", result?.msg)
+        // openNotificationWithIcon('success', data?.msg,result?.msg)
         cb()
         _onClose()
     } catch (err) {
