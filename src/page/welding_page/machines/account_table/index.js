@@ -20,6 +20,7 @@ import {
 } from './state/table';
 import { Button, Tooltip } from 'antd';
 import { ReloadOutlined } from '@ant-design/icons';
+import { columnInitTable } from './const';
 
 const TableFunction = () => {
 	// state

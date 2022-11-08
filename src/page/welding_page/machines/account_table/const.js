@@ -14,36 +14,46 @@ export const TITLE_TABLE = "Dữ liệu tổng hợp"
 
 export const columnInitTable = [
   {
-    title: "Id",
+    title: "Mã máy",
     key: "id",
     dataIndex: 'id',
   },
   {
-    title: "Product_Id",
-    key: "product_id",
-    dataIndex: 'product_id',
+    title: "Áp đầu vào",
+    key: "udc",
+    dataIndex: 'udc',
   },
   {
-    title: "Machine_Id",
-    key: "group_machine_id",
-    dataIndex: 'group_machine_id',
+    title: "Dòng đầu vào",
+    key: "idc",
+    dataIndex: 'idc',
   },
   {
-    title: "Speed",
-    key: "speed",
-    dataIndex: 'speed',
+    title: "Loại dây",
+    key: "wire_diameter",
+    dataIndex: 'wire_diameter',
   },
   {
-    title: "Bag Roll",
-    key: "bag_roll",
-    dataIndex: 'bag_roll',
+    title: "Status",
+    key: "status",
+    dataIndex: 'status',
   },
-  {
-    title: "Weight Roll",
-    key: "weight_roll",
-    dataIndex: 'weight_roll',
-  },
-
+  // {
+  //   title:'Actions',
+  //   key:"allowReading",
+  //   dataIndex:"allowReading",
+  //   render:(text,record)=>(
+  //     <span>
+  //       <button></button>
+  //     {/* <button 
+  //       onClick={()=>console.log(record.status)}
+  //     >Allow</button>
+  //     <button 
+  //       onClick={()=>console.log(record.id)}
+  //     >Reading</button> */}
+  //     </span>
+  //   )
+  // }
 ];
 export const jsonFormFilterInit = [
   {

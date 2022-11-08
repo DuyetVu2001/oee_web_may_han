@@ -83,8 +83,8 @@ const ModalForm = ({
 				layout="vertical"
 			>
 				<Form.Item>
-					{' '}
-					<HeaderForm loading={loading} type={type} />{' '}
+					
+					<HeaderForm loading={loading} type={type} />
 				</Form.Item>
 				<RenderForm jsonFrom={jsonFormInput} type={type} />
 			</StyledForm>

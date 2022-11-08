@@ -70,11 +70,24 @@ export const requestAddNew = async (body, cb , _onClose = () => {}) => {
     }
 }
 export const requestEdit = async (body, cb ,_onClose = () => {}) => {
+
     try {
-        await services.patch(body);
+        // const {data} = await services.patch(body);
+        const {status,...rest} = body;
+        const {data} = await services.patch(rest);
+        const result = await services.patchStatus({
+            "id" : body.id,
+            "status":status,
+            "active":true
+        })
+        console.log("Machine: ", rest);
+        console.log("Machine123: ", result);
+        
+        openNotificationWithIcon("success", data?.msg)
+        openNotificationWithIcon("success", result?.msg)
+        openNotificationWithIcon('success', data?.msg,result?.msg)
         cb()
         _onClose()
-        openNotificationWithIcon("success", "Chỉnh sửa thành công")
     } catch (err) {
         handleErr(err)
     }

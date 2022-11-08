@@ -26,7 +26,7 @@ export const Breadcrumbs = () => {
                     if (!index) return (
                         <Breadcrumb.Item key="home" onClick={() => history.push('/')} >
 												{/* {template.head_title} */}
-												OEE
+												Welding machine
                         </Breadcrumb.Item>
                     )
                     if (!pathName) return null;

@@ -3,7 +3,29 @@ import * as services from '../services';
 // INIT STATE
 export const initialStateConfig = {
 	formAdd: [],
-	formEdit: [],
+	formEdit: [
+		{
+			label:"Mã máy",
+			name:"id"
+		},
+		{
+			label:"Loại dây",
+			name:"wire_diameter"
+		},
+		{
+			label:"Status",
+			name:"status",
+			type:"select",
+			data:[
+				{
+					id:1, name:"1",label:"On"
+				},
+				{
+					id:2, name:"2", label:"Off"
+				}
+			]
+		}
+	],
 	formFilter: [],
 	listColumn: [],
 	loading: false,
