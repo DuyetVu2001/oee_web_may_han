@@ -35,8 +35,9 @@ export const columnInitTable = [
   },
   {
     title: "Status",
-    key: "status",
-    dataIndex: 'status',
+    key: "allowReading",
+    dataIndex: 'allowReading',
+    render: (text, record) => (text === '0' ? "Off" : "On")
   },
   // {
   //   title:'Actions',
