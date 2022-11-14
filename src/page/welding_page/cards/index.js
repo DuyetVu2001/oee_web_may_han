@@ -131,7 +131,40 @@ const Card = ({ data }) => {
 				<p style={{ margin: 'unset'}}>Runtime</p>
 				<p style={{ margin: 'unset'}}>{data.runtime}</p>
 			</div>
+			<p
+				style={{
+					borderRadius: 8,
+					padding: '4px 8px',
+					marginBottom: 10,
+					marginTop: 12,
 
+					color: 'white',
+					fontSize: 18,
+					background: '#C7da49',
+				}}
+			>
+				Thông số dây hàn
+			</p>
+
+			{data?.wire_info?.map((item, index) => (
+				<div
+					key={index}
+					style={{
+						display: 'flex',
+						alignItems: 'center',
+						justifyContent: 'space-between',
+						padding: '0 8px',
+
+						color: '#C7da49',
+						fontSize: 18,
+						fontWeight: 500,
+					}}
+				>
+					<p style={{ marginBlock: 'unset' }}>{item.key}</p>
+					<p style={{ marginBlock: 'unset' }}>{item.value}</p>
+				</div>
+			))}
+			
 			<p
 				style={{
 					borderRadius: 8,
