@@ -85,7 +85,7 @@ const Charts = () => {
 		setLoading(true);
 		axios
 			.get(
-				`${TEST_HOST}/voltage/line-chart?type=${filterTypeSelected}&machineId=${machineNameSelected}`
+				`${TEST_HOST}/machines/line-chart?type=${filterTypeSelected}&machineId=${machineNameSelected}`
 			)
 			.then((res) => {
 				const data = res.data?.data || [];

@@ -231,6 +231,7 @@
     "err_code": "Mã lỗi"
   },
   "route": {
+    "config": "Cấu hình",
     "home": "Home",
     "welding": "Welding",
     "statistic": "Thống kê",

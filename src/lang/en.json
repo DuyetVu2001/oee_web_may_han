@@ -227,6 +227,7 @@
     "err_code": "Err Code"
   },
   "route": {
+    "config": "Config",
     "home": "Home",
     "statistic": "Statistic",
     "setting": "Setting",

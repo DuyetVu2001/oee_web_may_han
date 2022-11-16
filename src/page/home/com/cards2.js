@@ -1,15 +1,18 @@
 import { Col, Row, Skeleton } from 'antd';
 import axios from 'axios';
 import { openNotificationWithIcon } from 'helper/request/notification_antd';
-import React, { useState } from 'react';
+import React, { Fragment, useState } from 'react';
 
 import { BtnTus } from 'com/btn_tutorial';
 import ReloadBtn from 'com/reload_btn';
 import { TEST_HOST } from '_config/constant';
+import { useHistory } from 'react-router-dom';
 
 const LOCAL_STORAGE_UNIQUE_KEY = 'cards_reload_time';
 
-const Cards = () => {
+const Cards2 = () => {
+	let history = useHistory();
+
 	const [loading, setLoading] = React.useState(false);
 	const [machineShow, setMachineShow] = useState();
 	const [reloadTime, setReloadTime] = useState(
@@ -47,6 +50,10 @@ const Cards = () => {
 		localStorage.setItem(LOCAL_STORAGE_UNIQUE_KEY, time);
 	};
 
+	const handleRedirect = (id) => {
+		history.push(`/monitor?id=${id}`);
+	};
+
 	return (
 		<div
 			style={{ margin: 'auto', overflow: 'hidden', padding: 8, paddingTop: 0 }}
@@ -74,12 +81,12 @@ const Cards = () => {
 					{ xs: 6, sm: 12 },
 				]}
 			>
-				{machineShow?.map((data) => (
-					<>
+				{machineShow?.map((data, index) => (
+					<Fragment key={index}>
 						<Col xs={24} sm={12} md={8} lg={6} xxl={4}>
-							<Card data={data} />
+							<Card data={data} onClick={() => handleRedirect(data?.id)} />
 						</Col>
-					</>
+					</Fragment>
 				))}
 			</Row>
 
@@ -97,57 +104,44 @@ const Cards = () => {
 	);
 };
 
-const Card = ({ data }) => {
+const Card = ({ data, onClick = () => {} }) => {
 	return (
 		<div
+			onClick={onClick}
 			style={{
-				// width: 236,
 				borderRadius: 10,
-				background: '#484552',
+				background: '#ccc',
 				padding: '12px 8px',
+				cursor: 'pointer',
 			}}
 		>
 			<h3
 				style={{
-					fontSize: 22,
+					fontSize: 24,
 					textAlign: 'center',
-					color: data?.status === '1' ? 'green' : 'red',
 				}}
 			>
 				{data.id || 'Not found .id'}
-				<p style={{ margin: 'unset', fontSize: 15}}>({data?.status === '1' ? "online" : "offline"})</p>
 			</h3>
-
-			{/* <div style={{
-						display: 'flex',
-						alignItems: 'center',
-						justifyContent: 'space-between',
-						padding: '0 8px',
-
-						color: 'white',
-						fontSize: 18,
-						fontWeight: 500,
-					}}>
-				<p style={{ margin: 'unset'}}>Runtime</p>
-				<p style={{ margin: 'unset'}}>{data.runtime}</p>
-			</div> */}
 
 			<p
 				style={{
 					borderRadius: 8,
-					padding: '4px 8px',
+					padding: '46px 18px',
 					marginBottom: 10,
 					marginTop: 12,
 
 					color: 'white',
-					fontSize: 18,
-					background: '#5A86DE',
+					fontSize: 46,
+					textAlign: 'center',
+					fontWeight: 500,
+					background: data?.status === '1' ? 'green' : '#aaa',
 				}}
 			>
-				Dòng
+				{data.wattage}
 			</p>
 
-			{data?.current?.map((item, index) => (
+			{data?.detail?.map((item, index) => (
 				<div
 					key={index}
 					style={{
@@ -156,52 +150,16 @@ const Card = ({ data }) => {
 						justifyContent: 'space-between',
 						padding: '0 8px',
 
-						color: '#5A86DE',
 						fontSize: 18,
 						fontWeight: 500,
 					}}
 				>
-					<p style={{ marginBlock: 'unset' }}>{item.key}</p>
-					<p style={{ marginBlock: 'unset' }}>{item.value}</p>
-				</div>
-			))}
-
-			{/* ============================ */}
-			<p
-				style={{
-					borderRadius: 8,
-					padding: '4px 8px',
-					marginBottom: 10,
-					marginTop: 24,
-
-					color: 'white',
-					fontSize: 18,
-					background: '#FB7936',
-				}}
-			>
-				Áp
-			</p>
-
-			{data?.voltage?.map((item, index) => (
-				<div
-					key={index}
-					style={{
-						display: 'flex',
-						alignItems: 'center',
-						justifyContent: 'space-between',
-						padding: '0 8px',
-
-						color: '#FB7936',
-						fontSize: 18,
-						fontWeight: 500,
-					}}
-				>
-					<p style={{ marginBlock: 'unset' }}>{item.key}</p>
-					<p style={{ marginBlock: 'unset' }}>{item.value}</p>
+					<p style={{ marginBlock: 'unset', fontSize: 26 }}>{item.key}</p>
+					<p style={{ marginBlock: 'unset', fontSize: 26 }}>{item.value}</p>
 				</div>
 			))}
 		</div>
 	);
 };
 
-export default Cards;
+export default Cards2;

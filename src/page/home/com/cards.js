@@ -1,7 +1,7 @@
 import { Col, Row, Skeleton } from 'antd';
 import axios from 'axios';
 import { openNotificationWithIcon } from 'helper/request/notification_antd';
-import React, { useState } from 'react';
+import React, { Fragment, useState } from 'react';
 
 import { BtnTus } from 'com/btn_tutorial';
 import ReloadBtn from 'com/reload_btn';
@@ -74,12 +74,12 @@ const Cards = () => {
 					{ xs: 6, sm: 12 },
 				]}
 			>
-				{machineShow?.map((data) => (
-					<>
+				{machineShow?.map((data, index) => (
+					<Fragment key={index}>
 						<Col xs={24} sm={12} md={8} lg={6} xxl={4}>
 							<Card data={data} />
 						</Col>
-					</>
+					</Fragment>
 				))}
 			</Row>
 
@@ -109,13 +109,15 @@ const Card = ({ data }) => {
 		>
 			<h3
 				style={{
-					fontSize: 22,
+					fontSize: 24,
 					textAlign: 'center',
-					color: data?.status === '1' ? 'green' : 'red',
+					color: data?.status === '1' ? '#00d700' : 'red',
 				}}
 			>
 				{data.id || 'Not found .id'}
-				<p style={{ margin: 'unset', fontSize: 15}}>({data?.status === '1' ? "online" : "offline"})</p>
+				<p style={{ margin: 'unset', fontSize: 15 }}>
+					({data?.status === '1' ? 'online' : 'offline'})
+				</p>
 			</h3>
 
 			{/* <div style={{
