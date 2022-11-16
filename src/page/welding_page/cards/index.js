@@ -115,22 +115,59 @@ const Card = ({ data }) => {
 				}}
 			>
 				{data.id || 'Not found .id'}
-				<p style={{ margin: 'unset', fontSize: 15}}>({data?.status === '1' ? "online" : "offline"})</p>
+				<p style={{ margin: 'unset', fontSize: 15 }}>
+					({data?.status === '1' ? 'online' : 'offline'})
+				</p>
 			</h3>
 
-			{/* <div style={{
+			<div
+				style={{
+					display: 'flex',
+					alignItems: 'center',
+					justifyContent: 'space-between',
+					padding: '0 8px',
+
+					color: 'white',
+					fontSize: 18,
+					fontWeight: 500,
+				}}
+			>
+				<p style={{ margin: 'unset' }}>Runtime</p>
+				<p style={{ margin: 'unset' }}>{data.runtime}</p>
+			</div>
+			<p
+				style={{
+					borderRadius: 8,
+					padding: '4px 8px',
+					marginBottom: 10,
+					marginTop: 12,
+
+					color: 'white',
+					fontSize: 18,
+					background: '#C7da49',
+				}}
+			>
+				Thông số dây hàn
+			</p>
+
+			{data?.wire_info?.map((item, index) => (
+				<div
+					key={index}
+					style={{
 						display: 'flex',
 						alignItems: 'center',
 						justifyContent: 'space-between',
 						padding: '0 8px',
 
-						color: 'white',
+						color: '#C7da49',
 						fontSize: 18,
 						fontWeight: 500,
-					}}>
-				<p style={{ margin: 'unset'}}>Runtime</p>
-				<p style={{ margin: 'unset'}}>{data.runtime}</p>
-			</div> */}
+					}}
+				>
+					<p style={{ marginBlock: 'unset' }}>{item.key}</p>
+					<p style={{ marginBlock: 'unset' }}>{item.value}</p>
+				</div>
+			))}
 
 			<p
 				style={{
