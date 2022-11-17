@@ -138,7 +138,7 @@ const Card = ({ data, onClick = () => {} }) => {
 					background: data?.status === '1' ? 'green' : '#aaa',
 				}}
 			>
-				{data.wattage}
+				{data.power_consumption}
 			</p>
 
 			{data?.detail?.map((item, index) => (
