@@ -138,7 +138,7 @@ const Card = ({ data, onClick = () => {} }) => {
 					background: data?.status === '1' ? 'green' : '#aaa',
 				}}
 			>
-				{data.power_consumption}
+				{Number(data.power_consumption || 0 ).toFixed(2)}
 			</p>
 
 			{data?.detail?.map((item, index) => (
@@ -155,7 +155,8 @@ const Card = ({ data, onClick = () => {} }) => {
 					}}
 				>
 					<p style={{ marginBlock: 'unset', fontSize: 26 }}>{item.key}</p>
-					<p style={{ marginBlock: 'unset', fontSize: 26 }}>{item.value}</p>
+					{/* <p style={{ marginBlock: 'unset', fontSize: 26 }}>{item.value}</p> */}
+					<p style={{ marginBlock: 'unset', fontSize: 26 }}>{Number(item.value || 0 ).toFixed(2)}</p>
 				</div>
 			))}
 		</div>

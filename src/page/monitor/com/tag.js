@@ -4,7 +4,7 @@ export const TAG_COLORS = ['blue', 'yellow', 'orange'];
 
 export default function Tag({ label = '', value = '', color = 'green' }) {
 	return (
-		<Box color={color}>
+		<Box color={color} style={{width:175, height:100}}>
 			<div>
 				<p className="label">{label}</p>
 				<p className="value">{value}</p>
@@ -36,6 +36,7 @@ const Box = styled.div`
 	}};
 
 	& .label {
+		margin-left:-17px;
 		margin-bottom: 2px;
 		font-size: 20px;
 		font-weight: 500;
@@ -43,6 +44,7 @@ const Box = styled.div`
 	}
 
 	& .value {
+		text-align:center;
 		margin-bottom: 0;
 		font-size: 36px;
 		font-weight: 500;

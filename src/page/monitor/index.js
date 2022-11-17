@@ -186,10 +186,10 @@ export default function MonitorPage() {
 
 		try {
 			const resChart = await axios.get(
-				`${TEST_HOST}/machines/detail?machineId=${machineNameSelected}`
+				`${TEST_HOST}/machines/details?machineId=${machineNameSelected}`
 			);
 
-			setMachinesDetail(resChart.data);
+			setMachinesDetail((resChart.data.data[0]));
 		} catch (err) {
 			openNotificationWithIcon('error', JSON.stringify(err));
 		} finally {
@@ -264,21 +264,21 @@ export default function MonitorPage() {
 				</div>
 
 				{/* TAGS SPECS */}
-				<div style={{ marginBottom: 22, display: 'flex' }}>
+				<div style={{ marginBottom: 22, display: 'flex'}}>
 					<div>
 						{machinesDetail.current?.map((i, index) => (
-							<Tag label={i.key} value={i.value} color={TAG_COLORS[0]} />
+							<Tag label={i.key} value={Number(i.value || 0 ).toFixed(2)} color={TAG_COLORS[0]} />
 						))}
 
 						<div className="">
 							{machinesDetail.voltage?.map((i, index) => (
-								<Tag label={i.key} value={i.value} color={TAG_COLORS[2]} />
+								<Tag label={i.key} value={Number(i.value || 0 ).toFixed(2)} color={TAG_COLORS[2]} />
 							))}
 						</div>
 					</div>
 
 					{machinesDetail.wire_info?.map((i, index) => (
-						<Tag label={i.key} value={i.value} />
+						<Tag  label={i.key} value={Number(i.value || 0 ).toFixed(2)}></Tag>
 					))}
 				</div>
 
