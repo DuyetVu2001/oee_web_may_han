@@ -13,6 +13,7 @@ import Highcharts from 'highcharts';
 import HighchartsReact from 'highcharts-react-official';
 import { LoadingOutlined } from '@ant-design/icons';
 import { TEST_HOST } from '_config/constant';
+import { BtnTus } from 'com/btn_tutorial';
 
 const FAKE_DETAIL = {
 	id: 'may1',

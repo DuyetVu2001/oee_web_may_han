@@ -92,14 +92,6 @@ const Cards2 = () => {
 
 			{!machineShow ? <Skeleton /> : null}
 
-			{/* <BtnTus>
-				<div>
-					<div>A: Actual</div>
-					<div>P: Plan</div>
-					<div>E1_M1: Tên máy</div>
-					<div>%: Đơn vị tính của OEE</div>
-				</div>
-			</BtnTus> */}
 		</div>
 	);
 };

@@ -1,4 +1,17 @@
 {
+  "welding":{
+    "ua":"Áp pha A",
+    "ub":"Áp pha B",
+    "uc":"Áp pha C",
+    "ia":"Dòng pha A",
+    "ib":"Dòng pha B",
+    "ic":"Dòng pha C",
+    "udc":"Áp ra",
+    "idc":"Dòng ra",
+    "wire_out_velocity":"Tốc độ ra dây",
+    "wire_consumption":"Lượng dây tiêu thụ",
+    "power_consumption":"Năng lượng tiêu thụ"
+  },
   "dn": "Tên đăng nhập",
   "login": {
     "user_name": "Tên đăng nhập",

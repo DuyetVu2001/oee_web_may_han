@@ -4,7 +4,7 @@ export const TAG_COLORS = ['blue', 'yellow', 'orange'];
 
 export default function Tag({ label = '', value = '', color = 'green' }) {
 	return (
-		<Box color={color} style={{width:175, height:100}}>
+		<Box color={color} style={{width:210, height:100}}>
 			<div>
 				<p className="label">{label}</p>
 				<p className="value">{value}</p>
