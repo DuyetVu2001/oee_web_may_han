@@ -129,7 +129,8 @@ export default function MonitorPage() {
 				if (!query.get('id')) setMachineNameSelected(machines?.[0]);
 				else setMachineNameSelected(query.get('id'));
 			})
-			.catch((err) => openNotificationWithIcon('error', JSON.stringify(err)));
+			// .catch((err) => openNotificationWithIcon('error', JSON.stringify(err)));
+			.catch((err) => openNotificationWithIcon('error', 'Lỗi lấy tên máy'));
 	}, [reloadTime, query]);
 
 	useEffect(() => {
@@ -176,7 +177,8 @@ export default function MonitorPage() {
 				xAxis: { categories: xAxis },
 			}));
 		} catch (err) {
-			openNotificationWithIcon('error', JSON.stringify(err));
+			// openNotificationWithIcon('error', JSON.stringify(err));
+			openNotificationWithIcon('error', 'Lỗi lấy dữ liệu đồ thị!');
 		} finally {
 			setLoading(false);
 		}
@@ -190,9 +192,10 @@ export default function MonitorPage() {
 				`${TEST_HOST}/machines/details?machineId=${machineNameSelected}`
 			);
 
-			setMachinesDetail((resChart.data.data[0]));
+			setMachinesDetail(resChart.data.data[0]);
 		} catch (err) {
-			openNotificationWithIcon('error', JSON.stringify(err));
+			// openNotificationWithIcon('error', JSON.stringify(err));
+			openNotificationWithIcon('error', 'Lỗi lấy thông tin máy!');
 		} finally {
 			setLoading(false);
 		}
