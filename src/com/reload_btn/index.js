@@ -5,7 +5,7 @@ const time = [4, 6, 10, 15, 20, 30];
 const flexCenterY = { display: 'flex', alignItems: 'center' };
 
 export default function ReloadBtn({
-	reloadTime = time[2],
+	reloadTime = time[0],
 	loading = false,
 
 	handleReloadBtn = () => {},

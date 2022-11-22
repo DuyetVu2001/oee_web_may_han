@@ -119,6 +119,7 @@ export default function MonitorPage() {
 		setMachineNameSelected(machineId);
 	}, [query]);
 
+	// request list machines name data
 	useEffect(() => {
 		axios
 			.get(`${TEST_HOST}/machines/name`)
@@ -133,25 +134,33 @@ export default function MonitorPage() {
 			.catch((err) => openNotificationWithIcon('error', 'Lỗi lấy tên máy'));
 	}, [reloadTime, query]);
 
+	// request detail machine
 	useEffect(() => {
 		if (!machineNameSelected) return () => {};
 
-		_requestChart();
 		_requestDetailMachine();
 		const inter = setInterval(() => {
-			_requestChart();
 			_requestDetailMachine();
 		}, 1000 * reloadTime);
 
 		return () => {
 			clearInterval(inter);
 		};
-	}, [reloadTime, machineNameSelected, machineNameSelected]);
+	}, [reloadTime, machineNameSelected]);
 
+	// request chart data
 	useEffect(() => {
 		if (!machineNameSelected) return () => {};
+
 		_requestChart();
-	}, [filterTypeSelected]);
+		const inter = setInterval(() => {
+			_requestChart();
+		}, 1000 * 5 * 60);
+
+		return () => {
+			clearInterval(inter);
+		};
+	}, [filterTypeSelected, machineNameSelected]);
 
 	const _requestChart = async () => {
 		setLoading(true);
@@ -268,21 +277,29 @@ export default function MonitorPage() {
 				</div>
 
 				{/* TAGS SPECS */}
-				<div style={{ marginBottom: 22, display: 'flex'}}>
+				<div style={{ marginBottom: 22, display: 'flex' }}>
 					<div>
 						{machinesDetail.current?.map((i, index) => (
-							<Tag label={i.key} value={Number(i.value || 0 ).toFixed(2)} color={TAG_COLORS[0]} />
+							<Tag
+								label={i.key}
+								value={Number(i.value || 0).toFixed(2)}
+								color={TAG_COLORS[0]}
+							/>
 						))}
 
 						<div className="">
 							{machinesDetail.voltage?.map((i, index) => (
-								<Tag label={i.key} value={Number(i.value || 0 ).toFixed(2)} color={TAG_COLORS[2]} />
+								<Tag
+									label={i.key}
+									value={Number(i.value || 0).toFixed(2)}
+									color={TAG_COLORS[2]}
+								/>
 							))}
 						</div>
 					</div>
 
 					{machinesDetail.wire_info?.map((i, index) => (
-						<Tag  label={i.key} value={Number(i.value || 0 ).toFixed(2)}></Tag>
+						<Tag label={i.key} value={Number(i.value || 0).toFixed(2)}></Tag>
 					))}
 				</div>
 
