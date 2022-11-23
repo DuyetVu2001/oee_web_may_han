@@ -9,13 +9,6 @@ export const initialStateConfig = {
 			// dataIndex: 'id',
 		  },
 		  {
-			label:"Áp đầu vào",
-			name:"ia"
-		  },{
-			label:"Dòng đầu vào",
-			name:"idc"
-		  },
-		  {
 			label: "Loại dây",
 			name: "wire_diameter",
 			type: "select",

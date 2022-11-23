@@ -73,12 +73,22 @@ const FAKE_DETAIL = {
 const FILTER_TYPES = [
 	{
 		id: 1,
-		label: '1 day',
+		label: '1 h',
+	},
+	{
+		id: 8,
+		label: '8 h',
 	},
 	{
 		id: 24,
 		label: '24 h',
 	},
+	
+	{
+		id: 7,
+		label: '7 days',
+	},
+	
 	{
 		id: 30,
 		label: '30 days',
@@ -109,7 +119,7 @@ export default function MonitorPage() {
 			type: 'spline',
 		},
 		title: {
-			text: 'Demo chart',
+			text: 'Line Chart',
 		},
 		series: [],
 	});
@@ -268,22 +278,46 @@ export default function MonitorPage() {
 				</div>
 
 				{/* TAGS SPECS */}
-				<div style={{ marginBottom: 22, display: 'flex'}}>
-					<div>
-						{machinesDetail.current?.map((i, index) => (
-							<Tag label={i.key} value={Number(i.value || 0 ).toFixed(2)} color={TAG_COLORS[0]} />
+				<div 
+					// style={{ marginBottom: 22, display: 'flex'}}
+					
+				>
+					<div 
+						sm={{span:18}}
+						md={{span:12}}>
+						{machinesDetail.current_AC?.map((i, index) => (
+							<Tag unit={i.unit} label={i.key} value={Number(i.value || 0 ).toFixed(2)} color={TAG_COLORS[0]} />
 						))}
 
-						<div className="">
-							{machinesDetail.voltage?.map((i, index) => (
-								<Tag label={i.key} value={Number(i.value || 0 ).toFixed(2)} color={TAG_COLORS[2]} />
+						<div className="" 
+							sm={{span:18}}
+							md={{span:12}} >
+							{machinesDetail.voltage_AC?.map((i, index) => (
+								<Tag unit={i.unit} label={i.key} value={Number(i.value || 0 ).toFixed(2)} color={TAG_COLORS[2]} />
 							))}
 						</div>
 					</div>
-
-					{machinesDetail.wire_info?.map((i, index) => (
-						<Tag  label={i.key} value={Number(i.value || 0 ).toFixed(2)}></Tag>
+					
+					<div>
+						{machinesDetail.wire_info?.map((i, index) => (
+						<Tag 
+							style={{width:500, height:100}}
+							sm={{span:12}}
+							md={{span:8}}  
+							unit={i.unit} label={i.key} value={Number(i.value || 0 ).toFixed(2)}>
+						</Tag>
 					))}
+					<div className="" 
+						sm={{span:18}}
+						md={{span:12}} >
+							{machinesDetail.DC?.map((i, index) => (
+								<Tag 
+									style={{width:250, height:100}}
+									unit={i.unit} label={i.key} value={Number(i.value || 0 ).toFixed(2)} color={TAG_COLORS[3]} />
+							))}
+						</div>
+					</div>
+					
 				</div>
 
 				{/* CHART */}

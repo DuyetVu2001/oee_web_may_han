@@ -26,9 +26,7 @@ import { columnInitTable } from './const';
 
 const TableFunction = () => {
 	// state
-
 	const [showAddNew, setShowAddNew] = useState(false);
-
 	const [configState, dispatchConfig] = React.useReducer(
 		reducerConfig,
 		initialStateConfig
@@ -38,12 +36,13 @@ const TableFunction = () => {
 		initialStateTable
 	);
 	const { loading, dataTable, pageInfo, filter } = tableState;
+
+	const [showDetail, setShowDetail] = useState(false);
 	
 	//handle reset 
 	const _handleReset = () => _requestDataTable()
-	
-	const [showDetail, setShowDetail] = useState(false);
 	const _handleAddNew = (body) => requestAddNew(body, () => _requestDataTable() , () => setShowAddNew(false))
+	
 	const { t } = useTranslation();
 
 	const lang = 'welding_title';
@@ -106,9 +105,6 @@ const TableFunction = () => {
 			{/* modal */}
 			<AddNewForm
 				visible={showAddNew}
-				// jsonFormInput={configState.formAdd}
-				
-				// fix tam table add new cho Huy Nguyen di demo
 				jsonFormInput={initialStateConfig.formAdd}
 				_onClose={() => setShowAddNew(false)}
 				_onSubmit={_handleAddNew}
@@ -122,7 +118,6 @@ const TableFunction = () => {
 		</div>
 	);
 };
-
 const Extra = ({
     loading = false,
     showDel = false,

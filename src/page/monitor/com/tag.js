@@ -1,13 +1,29 @@
 import styled from 'styled-components';
 
-export const TAG_COLORS = ['blue', 'yellow', 'orange'];
+export const TAG_COLORS = ['blue', 'yellow', 'orange','pink'];
 
-export default function Tag({ label = '', value = '', color = 'green' }) {
+export default function Tag({ label = '', value = '', color = 'green', unit = '' }) {
 	return (
-		<Box color={color} style={{width:210, height:100}}>
-			<div>
+		<Box 
+			color={color} 
+			grid = {{
+				gutter:16,
+				xs:1,
+				sm:2,
+				md:3,
+				lg:3,
+				xl:3,
+				xxl:3
+			}}
+		>
+			<div 
+				style={{width:550, height:100, marginLeft:20}}
+			>
 				<p className="label">{label}</p>
-				<p className="value">{value}</p>
+				<span className="value">{value}
+					<span className="unit">({unit})</span>
+				</span>
+				
 			</div>
 		</Box>
 	);
@@ -31,7 +47,8 @@ const Box = styled.div`
 			return 'linear-gradient(120deg, rgb(255, 200, 48), rgb(255, 172, 99))';
 		else if (color === TAG_COLORS[2])
 			return 'linear-gradient(120deg, rgb(226, 144, 0), rgb(255, 108, 22))';
-
+		else if (color ===TAG_COLORS[3])
+			return 'linear-gradient(120deg, rgb(194, 68, 219), rgb(194, 68, 219))';
 		return 'linear-gradient(120deg, rgb(66, 154, 67), rgb(111, 183, 87))';
 	}};
 
@@ -45,8 +62,15 @@ const Box = styled.div`
 
 	& .value {
 		text-align:center;
+		margin-left:380px;
 		margin-bottom: 0;
 		font-size: 36px;
+		font-weight: 500;
+		color: white;
+	}
+	& .unit {
+		margin-left:15px;
+		font-size: 18px;
 		font-weight: 500;
 		color: white;
 	}

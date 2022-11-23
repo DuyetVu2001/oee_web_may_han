@@ -1,4 +1,5 @@
 import {
+	FolderOutlined,
 	FundProjectionScreenOutlined,
 	HomeOutlined,
 	SettingOutlined,
@@ -9,6 +10,7 @@ import WeldingPage from 'page/welding_page';
 const HomePage = loadable(() => import('page/home'));
 const MonitorPage = loadable(() => import('page/monitor'));
 const ConfigPage = loadable(() => import('page/machines-config'));
+const MachineSetting = loadable(()=>import('page/machines_setting'));
 
 const Login = loadable(() => import('../page/login'));
 
@@ -17,6 +19,8 @@ export const ROUTES = {
 	MONITOR: 'monitor',
 	CONFIG: 'config',
 	LOGIN: 'login',
+	SETTING: 'setting',
+
 };
 
 export const private_route_admin = [
@@ -43,6 +47,14 @@ export const private_route_admin = [
 		exact: true,
 		name: 'config',
 		Icon: <SettingOutlined />,
+	},
+	{
+		role: [3, 4],
+		path: `/${ROUTES.SETTING}`,
+		Com: MachineSetting,
+		exact: true,
+		name: 'setting',
+		Icon: <FolderOutlined />,
 	},
 ];
 
