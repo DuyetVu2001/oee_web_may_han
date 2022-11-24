@@ -1,4 +1,5 @@
 import {
+	FieldTimeOutlined,
 	FolderOutlined,
 	FundProjectionScreenOutlined,
 	HomeOutlined,
@@ -11,6 +12,7 @@ const HomePage = loadable(() => import('page/home'));
 const MonitorPage = loadable(() => import('page/monitor'));
 const ConfigPage = loadable(() => import('page/machines-config'));
 const MachineSetting = loadable(()=>import('page/machines_setting'));
+const WorkingShift = loadable(()=> import('page/working_shift'));
 
 const Login = loadable(() => import('../page/login'));
 
@@ -20,6 +22,7 @@ export const ROUTES = {
 	CONFIG: 'config',
 	LOGIN: 'login',
 	SETTING: 'setting',
+	WORKING_SHIFT: 'working_shift',
 
 };
 
@@ -55,6 +58,14 @@ export const private_route_admin = [
 		exact: true,
 		name: 'setting',
 		Icon: <FolderOutlined />,
+	},
+	{
+		role: [3, 4],
+		path: `/${ROUTES.WORKING_SHIFT}`,
+		Com: WorkingShift,
+		exact: true,
+		name: 'working_shift',
+		Icon: <FieldTimeOutlined />,
 	},
 ];
 

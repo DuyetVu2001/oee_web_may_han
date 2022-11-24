@@ -236,7 +236,8 @@
     "about": "About us",
     "report": "Report",
     "monitor": "Monitor",
-    "send_email": "Send Email"
+    "send_email": "Send Email",
+    "working_shift": "Working Shift"
   },
   "home": {
     "title": "Select display function",
