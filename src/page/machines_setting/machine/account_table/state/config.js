@@ -34,6 +34,12 @@ export const initialStateConfig = {
 			rules: [{ required: true }]
 		},
 		{
+			label: "Tên máy",
+			name: "name",
+			dataIndex: 'name',
+			rules: [{ required: true }]
+		},
+		{
 			label: "Loại dây",
 			name: "wire_diameter",
 			type: "select",
@@ -63,6 +69,12 @@ export const initialStateConfig = {
 			label: "Mã máy",
 			name: "id",
 			dataIndex: 'id',
+			disabled: true
+		},
+		{
+			label: "Tên máy",
+			name: "name",
+			dataIndex: 'name',
 		},
 		{
 			label: "Loại dây",

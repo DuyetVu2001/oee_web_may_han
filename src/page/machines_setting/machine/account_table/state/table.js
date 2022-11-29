@@ -70,19 +70,19 @@ export const requestAddNew = async (body, cb , _onClose = () => {}) => {
     }
 }
 export const requestEdit = async (body, cb, _onClose = () => { }) => {
-    
-    console.log(body);
-
     try {
-        // const {data} = await services.patch(body);
-        const { status, ...rest } = body;
-        await Promise.all([
-            services.patch(rest),
-            services.patchStatus({
-                "id" : body.id,
-                "allowReading":status,
-            }
-        )])
+        await services.patch(body);
+        // const { status, ...rest } = body;
+
+        // console.log(body);
+
+        // await Promise.all([
+        //     services.patch(rest),
+        //     services.patchStatus({
+        //         "id" : body.id,
+        //         "allowReading":status,
+        //     }
+        // )])
         
         openNotificationWithIcon("success", "Success!")
         // openNotificationWithIcon("success", result?.msg)
