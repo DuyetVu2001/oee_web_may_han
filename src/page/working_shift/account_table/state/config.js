@@ -88,6 +88,10 @@ export const initialStateConfig = {
                     value: 'Sunday',
                     label: 'Sunday'
                 }
+            ], rules: [
+                {
+                    required: true,
+                },
             ]
         }
     ],

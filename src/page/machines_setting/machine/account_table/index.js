@@ -105,7 +105,7 @@ const TableFunction = () => {
 			{/* modal */}
 			<AddNewForm
 				visible={showAddNew}
-				jsonFormInput={initialStateConfig.formAdd}
+				jsonFormInput={configState.formAdd}
 				_onClose={() => setShowAddNew(false)}
 				_onSubmit={_handleAddNew}
 			/>

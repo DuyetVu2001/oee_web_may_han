@@ -66,7 +66,7 @@ const ModalForm = ({
           ...data,
           start_time: data.start_time.format("HH:mm"),
           end_time: data.end_time.format("HH:mm"),
-          dates: data.dates.toString()
+          dates: data.dates?.toString()
         });
         _onSubmit(          {
           id: visible.data.id,

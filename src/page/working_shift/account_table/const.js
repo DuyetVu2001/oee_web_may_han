@@ -38,16 +38,11 @@ export const columnInitTable = [
     key: "end_time",
     dataIndex: 'end_time',
   },
-  // {
-  //   title: "Updated",
-  //   key: "updated",
-  //   dataIndex: 'updated',
-  // },
   {
     title: "Máy",
     key: "machines",
     dataIndex: 'machines',
-    render : val => val.toString()
+    render : val => val?.toString()
   },
 
 ];

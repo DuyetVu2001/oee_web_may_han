@@ -109,7 +109,7 @@ const TableFunction = () => {
 				// jsonFormInput={configState.formAdd}
 				
 				// fix tam table add new cho Huy Nguyen di demo
-				jsonFormInput={initialStateConfig.formAdd}
+				jsonFormInput={configState.formAdd}
 				_onClose={() => setShowAddNew(false)}
 				_onSubmit={_handleAddNew}
 			/>

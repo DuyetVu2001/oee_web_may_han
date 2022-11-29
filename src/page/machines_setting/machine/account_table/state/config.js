@@ -6,7 +6,7 @@ export const initialStateConfig = {
 		{
 			label: "Mã máy",
 			name: "id",
-			// dataIndex: 'id',
+			dataIndex: 'id',
 		  },
 		  {
 			label: "Loại dây",
@@ -93,7 +93,7 @@ const set_columnData = (data) => ({ type: type.set_columnData, data });
 export const requestFormData = async (dispatch) => {
 	try {
 		const [
-			// formAdd,
+			formAdd,
 			formEdit,
 			// formFilter
 		] = await Promise.all([
@@ -104,8 +104,8 @@ export const requestFormData = async (dispatch) => {
 
 		dispatch(
 			set_jsonForm({
-				// formAdd: formAdd.data.data,
-				formEdit: formEdit.data?.data || [],
+				formAdd: formAdd.data.data,
+				formEdit: formEdit.data.data || [],
 				// formFilter: formFilter.data.data,
 			})
 		);

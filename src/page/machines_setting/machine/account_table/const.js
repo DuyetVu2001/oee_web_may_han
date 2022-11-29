@@ -18,6 +18,11 @@ export const columnInitTable = [
     key: "id",
     dataIndex: 'id',
   },
+  {
+    title: "Tên máy",
+    key: "name",
+    dataIndex: 'name',
+  },
   // {
   //   title: "Áp đầu vào",
   //   key: "udc",

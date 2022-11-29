@@ -18,11 +18,11 @@ export const getPostForm = (body) => apiClient.get(`${ENDPOINT}/post`, body)
 // 
 export const updateListColumn = (body) => apiClient.patch(`${ENDPOINT}/column`, body)
 // export const list machine
-export const listMachine = (body) => axios.get(`${TEST_HOST1}/machine`, body);
-export const get = (body) => axios.get(`${TEST_HOST1}/working_shift`, body);
-export const post = (body) => axios.post(`${TEST_HOST1}/working_shift`, body);
-export const patch = (body) => axios.put(`${TEST_HOST1}/working_shift`, body);
-export const getPatchForm = (body) => axios.get(`${TEST_HOST1}/working_shift/patch`, body);
-export const getListColumn = () => axios.get(`${TEST_HOST1}/working_shift/table`);
+export const listMachine = (body) => axios.get(`${TEST_HOST}/machines`, body);
+export const get = (body) => axios.get(`${TEST_HOST}/working_shift`, body);
+export const post = (body) => axios.post(`${TEST_HOST}/working_shift`, body);
+export const patch = (body) => axios.put(`${TEST_HOST}/working_shift`, body);
+export const getPatchForm = (body) => axios.get(`${TEST_HOST}/working_shift/patch`, body);
+export const getListColumn = () => axios.get(`${TEST_HOST}/working_shift/table`);
 
-export const deleteMany = (params) => axios.delete(`${TEST_HOST1}/working_shift`, params);
+export const deleteMany = (params) => axios.delete(`${TEST_HOST}/working_shift`, params);

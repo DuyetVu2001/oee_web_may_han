@@ -43,14 +43,14 @@ export const private_route_admin = [
 		name: 'monitor',
 		Icon: <FundProjectionScreenOutlined />,
 	},
-	{
-		role: [3, 4],
-		path: `/${ROUTES.CONFIG}`,
-		Com: ConfigPage,
-		exact: true,
-		name: 'config',
-		Icon: <SettingOutlined />,
-	},
+	// {
+	// 	role: [3, 4],
+	// 	path: `/${ROUTES.CONFIG}`,
+	// 	Com: ConfigPage,
+	// 	exact: true,
+	// 	name: 'config',
+	// 	Icon: <SettingOutlined />,
+	// },
 	{
 		role: [3, 4],
 		path: `/${ROUTES.SETTING}`,
