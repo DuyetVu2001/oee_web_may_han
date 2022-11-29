@@ -43,8 +43,10 @@ const ModalForm = ({
 					...data,
 				});
 				_onSubmit({
-					id: visible.data.id,
 					...data,
+					id: visible.data?.id,
+					name: visible.data?.name,
+					newName: data?.name || visible.data?.name,
 				});
 				// await services.updateProduct()
 				// _onClose()
