@@ -141,8 +141,8 @@ const TableFunction = (props) => {
                         // },
                         {
                           title: t(`${lang}.machine`),
-                          key: "name",
-                          dataIndex: 'name',
+                          key: "machines",
+                          dataIndex: 'machines',
                           render : val => val.toString()
                         },
                       
