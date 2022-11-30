@@ -13,6 +13,7 @@ const MonitorPage = loadable(() => import('page/monitor'));
 const ConfigPage = loadable(() => import('page/machines-config'));
 const MachineSetting = loadable(()=>import('page/machines_setting'));
 const WorkingShift = loadable(()=> import('page/working_shift'));
+const WorkingShiftFake = loadable(()=> import('page/working_shift_fake'));
 
 const Login = loadable(() => import('../page/login'));
 
@@ -62,7 +63,8 @@ export const private_route_admin = [
 	{
 		role: [3, 4],
 		path: `/${ROUTES.WORKING_SHIFT}`,
-		Com: WorkingShift,
+		// Com: WorkingShift,
+		Com: WorkingShiftFake,
 		exact: true,
 		name: 'working_shift',
 		Icon: <FieldTimeOutlined />,
