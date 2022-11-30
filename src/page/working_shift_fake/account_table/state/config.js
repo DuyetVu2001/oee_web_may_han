@@ -48,7 +48,18 @@ export const initialStateConfig = {
             isMul: true,
             name: 'machines',
             label: 'Máy',
-            data: [],
+            data: [
+                {
+                    id:"M01",
+                    name:"M01"
+                },{
+                    id:"M02",
+                    name:"M02"
+                },{
+                    id:"M03",
+                    name:"M03"
+                },
+            ],
             // rules: [
             //     {
             //         required: true,
@@ -141,7 +152,18 @@ export const initialStateConfig = {
             name: 'machines',
             isMul: true,
             label: 'Máy',
-            data: [],
+            data: [
+                {
+                    id:"M01",
+                    name:"M01"
+                },{
+                    id:"M02",
+                    name:"M02"
+                },{
+                    id:"M03",
+                    name:"M03"
+                },
+            ],
             // rules: [
             //     {
             //         required: true,
