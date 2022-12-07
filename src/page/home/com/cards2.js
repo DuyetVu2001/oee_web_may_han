@@ -34,7 +34,7 @@ const Cards2 = () => {
 		setLoading(true);
 
 		axios
-			.get(`${TEST_HOST}/machines/cards`)
+			.get(`${TEST_HOST}/machines`)
 			.then(({ data }) => setMachineShow(data?.data || []))
 			.catch((err) => {
 				openNotificationWithIcon('error', JSON.stringify(err));
@@ -50,9 +50,9 @@ const Cards2 = () => {
 		localStorage.setItem(LOCAL_STORAGE_UNIQUE_KEY, time);
 	};
 
-	const handleRedirect = (id) => {
-		history.push(`/monitor?id=${id}`);
-	};
+	// const handleRedirect = (id) => {
+	// 	history.push(`/machines/machine-info?machineId=${id}`);
+	// };
 
 	return (
 		<div
@@ -66,13 +66,6 @@ const Cards2 = () => {
 				}}
 			>
 				<div className=""></div>
-
-				<ReloadBtn
-					reloadTime={reloadTime}
-					handleReloadTime={handleReloadTime}
-					handleReloadBtn={_requestRealtimeData}
-					loading={loading}
-				/>
 			</div>
 
 			<Row
@@ -82,12 +75,14 @@ const Cards2 = () => {
 				]}
 			>
 				{machineShow?.map((data, index) => (
+					
 					<Fragment key={index}>
 						<Col xs={24} sm={12} md={8} lg={6} xxl={4}>
-							<Card data={data} onClick={() => handleRedirect(data?.id)} />
+							<Card data={data} />
 						</Col>
 					</Fragment>
-				))}
+				))
+				}
 			</Row>
 
 			{!machineShow ? <Skeleton /> : null}
@@ -97,9 +92,10 @@ const Cards2 = () => {
 };
 
 const Card = ({ data, onClick = () => {} }) => {
+	const history = useHistory();
 	return (
 		<div
-			onClick={onClick}
+			onClick={() => history.push(`/monitor/machine-info?machineId=${data.machineId || ''}`)}
 			style={{
 				borderRadius: 10,
 				background: '#ccc',
@@ -107,50 +103,34 @@ const Card = ({ data, onClick = () => {} }) => {
 				cursor: 'pointer',
 			}}
 		>
-			<h3
-				style={{
-					fontSize: 24,
-					textAlign: 'center',
-				}}
-			>
-				{data.id || 'Not found .id'}
-			</h3>
 
-			<p
-				style={{
-					borderRadius: 8,
-					padding: '46px 18px',
-					marginBottom: 10,
-					marginTop: 12,
+			<div style={{
+                border: `1px solid #ccc`, height: '100%',
+                borderRadius: 6, display: 'flex', flexDirection: 'column', justifyContent: 'space-between'
+            }}>
+                <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', margin: '3px 0' }}>
+                    <div style={{ fontSize: '1.5vw', fontWeight: '600' }}>{data.name || 'Not found machine'} </div>
+                </div>
+                <div style={{
+                    flex: 1,
+                    background: data?.allowReading === '1' ? 'green' : '#aaa',
+                    borderRadius: 3,
+                    display: 'flex', justifyContent: 'center', alignItems: 'center'
+                }}>
+                    <span style={{ fontSize: '4.5vw', lineHeight: -10, color: '#fff', fontWeight: '600' }}>{(Number(data.powerConsumption) || 0).toFixed(2)}</span>
+                </div>
+                <div style={{ background: '#dedede', fontSize: '1.8vw', fontWeight: '600', padding: '0px 25px', }}>
+                    <div style={{ display: 'flex', flex: 1, justifyContent: 'space-between', lineHeight: -10, }}>
+                        <span style={{ textAlign: 'left' }}>Dòng ra</span>
+                        <span style={{ textAlign: 'left' }}>{(Number(data.udc) || 0).toFixed(2)}</span>
+                    </div>
+                    <div style={{ display: 'flex', flex: 1, justifyContent: 'space-between', lineHeight: -10, }}>
+                        <span style={{ textAlign: 'left' }}>Áp ra</span>
+                        <span style={{ textAlign: 'left' }}>{(Number(data.idc) || 0).toFixed(2)}</span>
+                    </div>
+                </div>
+            </div>
 
-					color: 'white',
-					fontSize: 46,
-					textAlign: 'center',
-					fontWeight: 500,
-					background: data?.status === '1' ? 'green' : '#aaa',
-				}}
-			>
-				{Number(data.power_consumption || 0 ).toFixed(2)}
-			</p>
-
-			{data?.detail?.map((item, index) => (
-				<div
-					key={index}
-					style={{
-						display: 'flex',
-						alignItems: 'center',
-						justifyContent: 'space-between',
-						padding: '0 8px',
-
-						fontSize: 18,
-						fontWeight: 500,
-					}}
-				>
-					<p style={{ marginBlock: 'unset', fontSize: 26 }}>{item.key}</p>
-					{/* <p style={{ marginBlock: 'unset', fontSize: 26 }}>{item.value}</p> */}
-					<p style={{ marginBlock: 'unset', fontSize: 26 }}>{Number(item.value || 0 ).toFixed(2)}</p>
-				</div>
-			))}
 		</div>
 	);
 };

@@ -14,53 +14,38 @@ export const TITLE_TABLE = "Dữ liệu tổng hợp"
 
 export const columnInitTable = [
   {
-    title: "Mã máy",
-    key: "id",
-    dataIndex: 'id',
+    title: "Địa chỉ máy",
+    key: "ip",
+    dataIndex: 'ip',
   },
   {
-    title: "Tên máy",
-    key: "name",
-    dataIndex: 'name',
-  },
-  {
-    title: "Áp đầu vào",
-    key: "udc",
-    dataIndex: 'udc',
-  },
-  {
-    title: "Dòng đầu vào",
-    key: "idc",
-    dataIndex: 'idc',
-  },
-  {
-    title: "Loại dây",
-    key: "wire_diameter",
-    dataIndex: 'wire_diameter',
-  },
-  {
-    title: "Status",
-    key: "allowReading",
-    dataIndex: 'allowReading',
-    render: (text, record) => (text === '0' ? "Off" : "On")
+    title: "Địa chỉ Mac",
+    key: "mac_address",
+    dataIndex: 'mac_address',
   },
   // {
-  //   title:'Actions',
-  //   key:"allowReading",
-  //   dataIndex:"allowReading",
-  //   render:(text,record)=>(
-  //     <span>
-  //       <button></button>
-  //     {/* <button 
-  //       onClick={()=>console.log(record.status)}
-  //     >Allow</button>
-  //     <button 
-  //       onClick={()=>console.log(record.id)}
-  //     >Reading</button> */}
-  //     </span>
-  //   )
-  // }
+  //   title: "Áp đầu vào",
+  //   key: "udc",
+  //   dataIndex: 'udc',
+  // },
+  // {
+  //   title: "Dòng đầu vào",
+  //   key: "idc",
+  //   dataIndex: 'idc',
+  // },
+  // {
+  //   title: "Loại dây",
+  //   key: "wire_diameter",
+  //   dataIndex: 'wire_diameter',
+  // },
+  {
+    title: "Connect",
+    key: "isConnect",
+    dataIndex: 'isConnect',
+    render: (text, record) => (text === '0' ? "False" : "True")
+  }
 ];
+
 export const jsonFormFilterInit = [
   {
     name: "name",

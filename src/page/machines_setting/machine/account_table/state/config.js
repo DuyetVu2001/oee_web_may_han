@@ -27,77 +27,8 @@ const WIRE_TYPE = [
 
 export const initialStateConfig = {
 	formAdd: [
-		{
-			label: "Mã máy",
-			name: "id",
-			dataIndex: 'id',
-			rules: [{ required: true }]
-		},
-		{
-			label: "Tên máy",
-			name: "name",
-			dataIndex: 'name',
-			rules: [{ required: true }]
-		},
-		{
-			label: "Loại dây",
-			name: "wire_diameter",
-			type: "select",
-			data: WIRE_TYPE,
-			rules: [{ required: true }]
-		},
-		{
-			label: "Status",
-			name: "allowReading",
-			type: "select",
-			data:[
-				{
-					id:'1',
-					name:"On"
-				},
-				{
-					id:'0',
-					name:"Off"
-				}
-			],
-			rules: [{ required: true }]
-			// render: (text, record) => (text === '0' ? "Off" : "On")
-		},
 	],
 	formEdit: [
-		{
-			label: "Mã máy",
-			name: "id",
-			dataIndex: 'id',
-			disabled: true
-		},
-		{
-			label: "Tên máy",
-			name: "name",
-			dataIndex: 'name',
-		},
-		{
-			label: "Loại dây",
-			name: "wire_diameter",
-			type: "select",
-			data:WIRE_TYPE
-		},
-		{
-			label: "Status",
-			name: "allowReading",
-			type: "select",
-			data:[
-				{
-					id:'1',
-					name:"On"
-				},
-				{
-					id:'0',
-					name:"Off"
-				}
-			]
-			// render: (text, record) => (text === '0' ? "Off" : "On")
-		},
 	],
 	formFilter: [],
 	listColumn: [

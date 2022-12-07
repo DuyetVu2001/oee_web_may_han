@@ -1,91 +1,128 @@
 import { handleErr } from '../helper/handle_err_request';
 import * as services from '../services';
 // INIT STATE
+
+const WIRE_TYPE = [
+	{
+		id:'0.8mm',
+		name:'0.8 mm'
+	},
+	{
+		id:'1.0mm',
+		name:'1.0 mm'
+	},
+	{
+		id:'1.2mm',
+		name:'1.2 mm'
+	},
+	{
+		id:'1.4mm',
+		name:'1.4 mm'
+	},
+	{
+		id:'1.6mm',
+		name:'1.6 mm'
+	}
+]
+
 export const initialStateConfig = {
 	formAdd: [
 		{
 			label: "Mã máy",
 			name: "id",
-			// dataIndex: 'id',
-		  },
-		  {
-			label:"Áp đầu vào",
-			name:"ia"
-		  },{
-			label:"Dòng đầu vào",
-			name:"idc"
-		  },
-		  {
+			dataIndex: 'id',
+			rules: [{ required: true }]
+		},
+		{
+			label: "Tên máy",
+			name: "name",
+			dataIndex: 'name',
+			rules: [{ required: true }]
+		},
+		{
 			label: "Loại dây",
 			name: "wire_diameter",
 			type: "select",
-			data:[
-				{
-					id:1,
-					name:'0.8 mm'
-				},
-				{
-					id:2,
-					name:'1.0 mm'
-				},
-				{
-					id:3,
-					name:'1.2 mm'
-				},
-				{
-					id:4,
-					name:'1.4 mm'
-				},
-				{
-					id:5,
-					name:'1.6 mm'
-				},
-			]
-		  },
-		  {
+			data: WIRE_TYPE,
+			rules: [{ required: true }]
+		},
+		{
 			label: "Status",
 			name: "allowReading",
 			type: "select",
 			data:[
 				{
-					id:true,
+					id:'1',
 					name:"On"
 				},
 				{
-					id:false,
+					id:'0',
+					name:"Off"
+				}
+			],
+			rules: [{ required: true }]
+			// render: (text, record) => (text === '0' ? "Off" : "On")
+		},
+	],
+	formEdit: [
+		{
+			label: "Mã máy",
+			name: "id",
+			dataIndex: 'id',
+			disabled: true
+		},
+		{
+			label: "Tên máy",
+			name: "name",
+			dataIndex: 'name',
+		},
+		{
+			label: "Loại dây",
+			name: "wire_diameter",
+			type: "select",
+			data:WIRE_TYPE
+		},
+		{
+			label: "Status",
+			name: "allowReading",
+			type: "select",
+			data:[
+				{
+					id:'1',
+					name:"On"
+				},
+				{
+					id:'0',
 					name:"Off"
 				}
 			]
 			// render: (text, record) => (text === '0' ? "Off" : "On")
-		  },
-	],
-	formEdit: [
-		// {
-		// 	label:"Mã máy",
-		// 	name:"id"
-		// },
-		// {
-		// 	label:"Loại dây",
-		// 	name:"wire_diameter"
-		// },
-		// {
-		// 	label:"Status",
-		// 	name:"status",
-		// 	type:"select",
-		// 	data:[
-		// 		{
-		// 			id: true,
-		// 			name: "On"
-		// 		},
-		// 		{
-		// 			id: false,
-		// 			name: "Off"
-		// 		}
-		// 	]
-		// }
+		},
 	],
 	formFilter: [],
-	listColumn: [],
+	listColumn: [
+		{
+			title: "Mã máy",
+			key: "id",
+			dataIndex: 'id',
+		},
+		{
+			title: "Tên máy",
+			key: "name",
+			dataIndex: 'name',
+		},
+		{
+			title: "Loại dây",
+			key: "wire_diameter",
+			dataIndex: 'wire_diameter',
+		},
+		{
+			title: "Status",
+			key: "allowReading",
+			dataIndex: 'allowReading',
+			render: (text, record) => (text === '0' ? "Off" : "On")
+		},
+	],
 	loading: false,
 };
 // TYPE
@@ -100,7 +137,7 @@ const set_columnData = (data) => ({ type: type.set_columnData, data });
 export const requestFormData = async (dispatch) => {
 	try {
 		const [
-			// formAdd,
+			formAdd,
 			formEdit,
 			// formFilter
 		] = await Promise.all([
@@ -111,8 +148,8 @@ export const requestFormData = async (dispatch) => {
 
 		dispatch(
 			set_jsonForm({
-				// formAdd: formAdd.data.data,
-				formEdit: formEdit.data?.data || [],
+				formAdd: formAdd.data.data,
+				formEdit: formEdit.data.data || [],
 				// formFilter: formFilter.data.data,
 			})
 		);

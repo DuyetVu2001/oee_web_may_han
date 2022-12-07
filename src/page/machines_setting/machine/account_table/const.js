@@ -13,11 +13,11 @@ export const TITLE_TABLE = "Dữ liệu tổng hợp"
 // "updated": 1640224687
 
 export const columnInitTable = [
-  {
-    title: "Mã máy",
-    key: "id",
-    dataIndex: 'id',
-  },
+  // {
+  //   title: "Mã máy",
+  //   key: "id",
+  //   dataIndex: 'id',
+  // },
   {
     title: "Tên máy",
     key: "name",
@@ -33,34 +33,19 @@ export const columnInitTable = [
   //   key: "idc",
   //   dataIndex: 'idc',
   // },
-  {
-    title: "Loại dây",
-    key: "wire_diameter",
-    dataIndex: 'wire_diameter',
-  },
+  // {
+  //   title: "Loại dây",
+  //   key: "wire_diameter",
+  //   dataIndex: 'wire_diameter',
+  // },
   {
     title: "Status",
     key: "allowReading",
     dataIndex: 'allowReading',
     render: (text, record) => (text === '0' ? "Off" : "On")
-  },
-  // {
-  //   title:'Actions',
-  //   key:"allowReading",
-  //   dataIndex:"allowReading",
-  //   render:(text,record)=>(
-  //     <span>
-  //       <button></button>
-  //     {/* <button 
-  //       onClick={()=>console.log(record.status)}
-  //     >Allow</button>
-  //     <button 
-  //       onClick={()=>console.log(record.id)}
-  //     >Reading</button> */}
-  //     </span>
-  //   )
-  // }
+  }
 ];
+
 export const jsonFormFilterInit = [
   {
     name: "name",

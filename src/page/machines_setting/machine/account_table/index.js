@@ -91,8 +91,8 @@ const TableFunction = () => {
 			>
 				<TableCustom
 					dataSource={dataTable}
-					columns={configState?.listColumn}
-					// columns={columnInitTable}
+					// columns={configState?.listColumn}
+					columns={columnInitTable}
 					loading={loading}
 					scroll={{ y: 'calc(100vh - 200px)' }}
 					pagination={false}

@@ -29,4 +29,3 @@ export const ROLE = {
 }
 
 export const TEST_HOST = 'http://192.168.1.44:3888'
-export const TEST_HOST1 = 'http://192.168.1.109:5200'
