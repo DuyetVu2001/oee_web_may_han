@@ -44,11 +44,13 @@ const ModalForm = ({
   // handle
   const onFinish = (val) => {
     try {
-      console.log("val", val);
+      // pre handle submit
+
+      // submit
       setLoading(true);
-      _onSubmit(val)
-      setLoading(false);
+       _onSubmit(val)
       // _onClose()
+      setLoading(false);
     } catch (err) {
       setLoading(false);
     }
@@ -80,7 +82,7 @@ const TitleDetail = React.memo(({ _onReset, _onClose }) => {
 
 const HeaderForm = ({ loading, type, _onClose = () => { } }) => {
   return (
-    <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', borderBottom: '1px solid #eee',  }}>
+    <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', borderBottom: '1px solid #eee', paddingBottom: 10 }}>
       <span style={{ fontSize: 18, fontWeight: '500' }}>{type === ACT_TYPE.EDIT ? "Chỉnh sửa" : "Thêm mới"}</span>
       <div>
         <Button

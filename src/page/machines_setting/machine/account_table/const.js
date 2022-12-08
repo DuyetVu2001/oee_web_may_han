@@ -39,7 +39,7 @@ export const columnInitTable = [
   //   dataIndex: 'wire_diameter',
   // },
   {
-    title: "Status",
+    title: "Trạng thái",
     key: "allowReading",
     dataIndex: 'allowReading',
     render: (text, record) => (text === '0' ? "Off" : "On")

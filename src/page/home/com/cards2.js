@@ -50,9 +50,12 @@ const Cards2 = () => {
 		localStorage.setItem(LOCAL_STORAGE_UNIQUE_KEY, time);
 	};
 
-	// const handleRedirect = (id) => {
-	// 	history.push(`/machines/machine-info?machineId=${id}`);
-	// };
+	const handleRedirect = (machine_id) => {
+
+		// history.push(`/machines/machine-info?machineId=${id}`);
+		history.push(`/monitor?machineId=${machine_id}`);
+		// console.log("ID :", id);
+	};
 
 	return (
 		<div
@@ -78,7 +81,7 @@ const Cards2 = () => {
 					
 					<Fragment key={index}>
 						<Col xs={24} sm={12} md={8} lg={6} xxl={4}>
-							<Card data={data} />
+							<Card data={data} onClick={() => handleRedirect(data?.name)} />
 						</Col>
 					</Fragment>
 				))
@@ -92,10 +95,11 @@ const Cards2 = () => {
 };
 
 const Card = ({ data, onClick = () => {} }) => {
-	const history = useHistory();
+	// const history = useHistory();
 	return (
 		<div
-			onClick={() => history.push(`/monitor/machine-info?machineId=${data.machineId || ''}`)}
+			// onClick={() => history.push(`/monitor/machine-info?machineId=${data.machineId || ''}`)}
+			onClick={onClick}
 			style={{
 				borderRadius: 10,
 				background: '#ccc',

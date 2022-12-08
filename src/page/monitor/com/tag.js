@@ -21,7 +21,6 @@ export default function Tag({ label = '', value = '', color = 'green', unit = ''
 			>
 				<p className="label">{label}</p>
 				<span className="value">{value}
-					<span className="unit">({unit})</span>
 				</span>
 				
 			</div>

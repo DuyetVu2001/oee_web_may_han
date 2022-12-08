@@ -29,6 +29,28 @@ export const initialStateConfig = {
 	formAdd: [
 	],
 	formEdit: [
+		{
+			name: "name",
+			label: "Tên máy",
+			rules: [{ required: true }],
+			disabled:true
+		},
+		{
+			name: "allowReading",
+			label: "Status",
+			rules: [{ required: true }],
+			type: 'select',
+			data:[
+				{
+					id:'1',
+					name:"On"
+				},
+				{
+					id:'0',
+					name:"Off"
+				}
+			],
+		},
 	],
 	formFilter: [],
 	listColumn: [

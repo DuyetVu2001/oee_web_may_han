@@ -67,7 +67,7 @@ const TableFunction = () => {
 	return (
 		<div style={{}}>
 			<CardCustom
-				title={t(`${lang}.machines`)}
+				// title={t(`${lang}.machines`)}
 				extra={<Extra
                     // loading={loading} showDel={selectedRow && selectedRow[0]}
                     listColumn={configState.listColumn}
@@ -137,11 +137,9 @@ const Extra = ({
         <div style={{ display: 'flex', alignItems: 'center', paddingRight: 7, justifyContent: 'space-between' }}>
             <div style={{ display: 'flex', flex: 1 }}>
                 <div style={{ display: 'flex' }}>
-                    {/* {!showDel ? null : <Button loading={loading} onClick={_handleDel} className="ro-custom" type="text" icon={<DeleteOutlined />} >{t(`${lang}.del`)}</Button>} */}
-                    <Button loading={loading} onClick={() => _onReload()} className="ro-custom" type="text" icon={<ReloadOutlined />} >{t(`${lang}.reset`)}</Button>
-                    <Button loading={loading} onClick={_onClickAdd} className="ro-custom" type="text" icon={<PlusOutlined />} >{t(`${lang}.add`)}</Button>
-                    {/* <Button loading={loading} onClick={_onFilter} className="ro-custom" type="text" icon={<FilterOutlined />} >{t(`${lang}.filter`)}</Button> */}
-                    {/* <Button loading={loading} onClick={_onClickColumnShow} className="ro-custom" type="text" icon={<UnorderedListOutlined />} >Hiển thị</Button> */}
+                    {/* <Button loading={loading} onClick={() => _onReload()} className="ro-custom" type="text" icon={<ReloadOutlined />} >{t(`${lang}.reset`)}</Button> */}
+                    {/* <Button loading={loading} onClick={_onClickAdd} className="ro-custom" type="text" icon={<PlusOutlined />} >{t(`${lang}.add`)}</Button> */}
+                  
                 </div>
             </div>
         </div>
