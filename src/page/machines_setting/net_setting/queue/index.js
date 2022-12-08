@@ -47,7 +47,7 @@ function Queue() {
                       paddingTop: "12px",
                       paddingBottom: "12px",
                       textAlign: "left",
-                      backgroundColor: "#04AA6D",
+                      backgroundColor: "#d19e45",
                       color: "white"}}
             >
               Queue
@@ -59,7 +59,7 @@ function Queue() {
                       paddingTop: "12px",
                       paddingBottom: "12px",
                       textAlign: "left",
-                      backgroundColor: "#04AA6D",
+                      backgroundColor: "#d19e45",
                       color: "white"}}
             >
               Connect

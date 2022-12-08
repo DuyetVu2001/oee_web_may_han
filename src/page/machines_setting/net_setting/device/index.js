@@ -47,7 +47,7 @@ function Device() {
                       paddingTop: "12px",
                       paddingBottom: "12px",
                       textAlign: "left",
-                      backgroundColor: "#04AA6D",
+                      backgroundColor: "#d19e45",
                       color: "white"}}
             >
               Địa chỉ Ip
@@ -59,7 +59,7 @@ function Device() {
                       paddingTop: "12px",
                       paddingBottom: "12px",
                       textAlign: "left",
-                      backgroundColor: "#04AA6D",
+                      backgroundColor: "#d19e45",
                       color: "white"}}
             >
               Địa chỉ Mac
@@ -71,7 +71,7 @@ function Device() {
                       paddingTop: "12px",
                       paddingBottom: "12px",
                       textAlign: "left",
-                      backgroundColor: "#04AA6D",
+                      backgroundColor: "#d19e45",
                       color: "white"}}
             >
               Connect
