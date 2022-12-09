@@ -8,7 +8,6 @@ import {
 } from '@ant-design/icons';
 import loadable from '../helper/router/loadable';
 
-import WeldingPage from 'page/welding_page';
 const HomePage = loadable(() => import('page/home'));
 const MonitorPage = loadable(() => import('page/monitor'));
 const MachineSetting = loadable(()=>import('../page/machines_setting'));
@@ -33,14 +32,14 @@ export const private_route_admin = [
 		name: 'home',
 		Icon: <HomeOutlined />,
 	},
-	{
-		role: [3, 4],
-		path: `/${ROUTES.MONITOR}`,
-		Com: MonitorPage,
-		exact: true,
-		name: 'monitor',
-		Icon: <FundProjectionScreenOutlined />,
-	},
+	// {
+	// 	role: [3, 4],
+	// 	path: `/${ROUTES.MONITOR}`,
+	// 	Com: MonitorPage,
+	// 	exact: true,
+	// 	name: 'monitor',
+	// 	Icon: <FundProjectionScreenOutlined />,
+	// },
 	{
 		role: [3, 4],
 		path: `/${ROUTES.SETTING}`,

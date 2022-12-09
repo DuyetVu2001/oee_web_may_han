@@ -10,7 +10,7 @@ function Device() {
     axios.get(baseUrl).then((res) => {
       setDevice(res.data.data);
     });
-  });
+  },[]);
   if (!device) return null;
 
   return (
@@ -74,7 +74,7 @@ function Device() {
                       backgroundColor: "#d19e45",
                       color: "white"}}
             >
-              Connect
+              Internet Connections
             </th>
           </tr>
         </thead>

@@ -62,14 +62,14 @@ function Queue() {
                       backgroundColor: "#d19e45",
                       color: "white"}}
             >
-              Connect
+              Members
             </th>
           </tr>
         </thead>
         <tbody>
           <tr style={{cursor:"pointer"}}>
             <td>{queue.queueLength}</td>
-            <td>{queue.isConnect.toString()}</td>
+            <td>{queue.queueMembers}</td>
           </tr>
         </tbody>
       </table>

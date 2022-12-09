@@ -59,7 +59,7 @@ const TableFunction = () => {
 
 	const _handleUpdate = (body) =>
 		requestEdit(
-			body,
+			{body:{...body,deviceId: body.id}, },
 			() => _requestDataTable(),
 			() => setShowDetail(false)
 		);

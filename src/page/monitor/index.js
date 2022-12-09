@@ -89,42 +89,6 @@ export default function MonitorPage() {
     };
   }, [reloadTime, machineNameSelected, machineNameSelected]);
 
-  // useEffect(() => {
-  // 	if (!machineNameSelected) return () => {};
-  // 	_requestChart();
-  // }, [filterTypeSelected]);
-
-  // const _requestChart = async () => {
-  // 	setLoading(true);
-
-  // 	try {
-  // 		const resChart = await axios.get(
-  // 			`${TEST_HOST}/machines/line-chart?type=${filterTypeSelected}&machineId=${machineNameSelected}`
-  // 		);
-
-  // 		// handle data chart
-  // 		const data = resChart.data?.data || [];
-  // 		const xAxis = Object.values(data)?.[0]?.map((item) =>
-  // 			moment.unix(item.time).format('MM:HH DD/MM/YYYY')
-  // 		);
-  // 		const series = Object.keys(data)?.map((item) => ({
-  // 			data: data[item]?.map((item2) => +item2.value) || [],
-  // 			name: item,
-  // 		}));
-
-  // 		setOptions((prevState) => ({
-  // 			...prevState,
-  // 			series,
-  // 			xAxis: { categories: xAxis },
-  // 		}));
-  // 	} catch (err) {
-  // 		// openNotificationWithIcon('error', JSON.stringify(err));
-  // 		openNotificationWithIcon('error', 'Lỗi lấy dữ liệu đồ thị!');
-  // 	} finally {
-  // 		setLoading(false);
-  // 	}
-  // };
-
   const _requestDetailMachine = async () => {
     setLoading(true);
 
@@ -161,7 +125,7 @@ export default function MonitorPage() {
         >
           <div style={{ display: "flex", alignItems: "center" }}>
             <div style={{ display: "flex", alignItems: "center" }}>
-              {machinesName ? (
+              {machinesName? (
                 <>
                   <p
                     style={{
@@ -180,14 +144,15 @@ export default function MonitorPage() {
                     optionLabelProp="label"
                     onChange={setMachineNameSelected}
                   >
-                    {machinesName?.map((i) => {
+                    {machinesName?.name?.map((name) => {
                       return (
-                        <Select.Option value={i} label={i}>
-                          <div>{i}</div>
+                        <Select.Option value={name} label={name}>
+                          <div>{name}</div>
                         </Select.Option>
                       );
                     })}
                   </Select>
+                    
                 </>
               ) : (
                 <LoadingOutlined />
@@ -195,21 +160,18 @@ export default function MonitorPage() {
             </div>
           </div>
 
-          {/* <ReloadBtn
+          <ReloadBtn
 						reloadTime={reloadTime}
 						handleReloadTime={handleReloadTime}
 						handleReloadBtn={() => {
 							_requestDetailMachine();
-							// _requestChart();
 						}}
 						loading={loading}
-					/> */}
+					/>
         </div>
 
         {/* TAGS SPECS */}
-        <div
-        style={{ marginBottom: 22, display: 'flex'}}
-        >
+        <div>
           {Object.keys(machinesDetail).map((key, index) => {
             if (key === "ubc" || key === "ia" || key === "ic")
             return (

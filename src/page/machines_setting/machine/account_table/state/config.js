@@ -29,15 +29,50 @@ export const initialStateConfig = {
 	formAdd: [
 	],
 	formEdit: [
+		// {
+		// 	name: "id",
+		// 	label: "DevicedId",
+		// 	// rules: [{ required: true }],
+		// 	disabled:true
+
+		// },
 		{
 			name: "name",
-			label: "Tên máy",
+			label: "Tên mới",
+			// rules: [{ required: true }],
+			// disabled:true
+		},
+		{
+			name: "wire_diameter",
+			label: "Cỡ dây",
 			rules: [{ required: true }],
-			disabled:true
+			type: 'select',
+			data:[
+				{
+					id:'0.8mm',
+					name:'0.8 mm'
+				},
+				{
+					id:'1.0mm',
+					name:'1.0 mm'
+				},
+				{
+					id:'1.2mm',
+					name:'1.2 mm'
+				},
+				{
+					id:'1.4mm',
+					name:'1.4 mm'
+				},
+				{
+					id:'1.6mm',
+					name:'1.6 mm'
+				}
+			],
 		},
 		{
 			name: "allowReading",
-			label: "Status",
+			label: "Trạng thái",
 			rules: [{ required: true }],
 			type: 'select',
 			data:[

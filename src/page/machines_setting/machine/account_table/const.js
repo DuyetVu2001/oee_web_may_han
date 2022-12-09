@@ -33,11 +33,11 @@ export const columnInitTable = [
   //   key: "idc",
   //   dataIndex: 'idc',
   // },
-  // {
-  //   title: "Loại dây",
-  //   key: "wire_diameter",
-  //   dataIndex: 'wire_diameter',
-  // },
+  {
+    title: "Cỡ dây",
+    key: "wire_diameter",
+    dataIndex: 'wire_diameter',
+  },
   {
     title: "Trạng thái",
     key: "allowReading",
