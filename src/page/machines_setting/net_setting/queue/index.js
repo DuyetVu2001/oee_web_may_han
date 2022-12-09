@@ -10,27 +10,12 @@ function Queue() {
     axios.get(baseUrl).then((res) => {
       setQueue(res.data.data);
     });
-  });
+  },[]);
   if (!queue) return null;
 
   return (
     <div>
       <h1>QUEUE</h1>
-
-      {/* <Table striped bordered hover>
-        <thead>
-          <tr class="table-primary">
-            <th scope="col">Queue</th>
-            <th scope="col">Connect</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr class="table-primary">
-            <td>{queue.mac_address}</td>
-            <td>{queue.isConnect.toString()}</td>
-          </tr>
-        </tbody>
-      </Table> */}
       <table
         style={{
           fontFamily: "Arial, Helvetica, sans-serif",
@@ -47,7 +32,7 @@ function Queue() {
                       paddingTop: "12px",
                       paddingBottom: "12px",
                       textAlign: "left",
-                      backgroundColor: "#d19e45",
+                      backgroundColor: "#9098d1",
                       color: "white"}}
             >
               Queue
@@ -59,7 +44,7 @@ function Queue() {
                       paddingTop: "12px",
                       paddingBottom: "12px",
                       textAlign: "left",
-                      backgroundColor: "#d19e45",
+                      backgroundColor: "#9098d1",
                       color: "white"}}
             >
               Members

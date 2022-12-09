@@ -9,12 +9,71 @@ import { TEST_HOST } from '_config/constant';
 import { useHistory } from 'react-router-dom';
 
 const LOCAL_STORAGE_UNIQUE_KEY = 'cards_reload_time';
-
+const FAKE_MACHINE=[
+  {
+    "uab": "113.1",
+      "ubc": "0.3",
+      "uca": "112.9",
+      "udc": "0.06",
+      "ia": "0.0",
+      "ib": "0.0",
+      "ic": "0.0",
+      "idc": "0.0",
+      "powerConsumption": "55.63999893143773",
+      "wireConsumption": "0.0",
+      "wire_diameter": "1.2mm",
+      "wire_v": "0",
+      "allowReading": "1",
+      "name": "may0122",
+      "id": "/dev/ttyAMA4-2",
+      "status": "0",
+      "errorCode": "1"
+  },
+ {
+    "uab": "113.1",
+      "ubc": "0.3",
+      "uca": "112.9",
+      "udc": "0.06",
+      "ia": "0.0",
+      "ib": "0.0",
+      "ic": "0.0",
+      "idc": "0.0",
+      "powerConsumption": "55.63999893143773",
+      "wireConsumption": "0.0",
+      "wire_diameter": "1.2mm",
+      "wire_v": "0",
+      "allowReading": "1",
+      "name": "may0122",
+      "id": "/dev/ttyAMA4-2",
+      "status": "0",
+      "errorCode": "1"
+  },
+  {
+    "uab": "113.1",
+      "ubc": "0.3",
+      "uca": "112.9",
+      "udc": "0.06",
+      "ia": "0.0",
+      "ib": "0.0",
+      "ic": "0.0",
+      "idc": "0.0",
+      "powerConsumption": "55.63999893143773",
+      "wireConsumption": "0.0",
+      "wire_diameter": "1.2mm",
+      "wire_v": "0",
+      "allowReading": "1",
+      "name": "may0122",
+      "id": "/dev/ttyAMA4-2",
+      "status": "0",
+      "errorCode": "1"
+  }
+]
 const Cards2 = () => {
 	let history = useHistory();
 
 	const [loading, setLoading] = React.useState(false);
-	const [machineShow, setMachineShow] = useState();
+	const [machineShow, setMachineShow] = useState(FAKE_MACHINE);
+	// const [machineShow, setMachineShow] = useState();
 	const [reloadTime, setReloadTime] = useState(
 		localStorage.getItem(LOCAL_STORAGE_UNIQUE_KEY) || 10
 	);
@@ -35,15 +94,15 @@ const Cards2 = () => {
 	const _requestRealtimeData = () => {
 		setLoading(true);
 
-		axios
-			.get(`${TEST_HOST}/machines`)
-			.then(({ data }) => setMachineShow(data?.data || []))
-			.catch((err) => {
-				openNotificationWithIcon('error', JSON.stringify(err));
-			})
-			.finally(() => {
-				setLoading(false);
-			});
+		// axios
+		// 	.get(`${TEST_HOST}/machines`)
+		// 	.then(({ data }) => setMachineShow(data?.data || []))
+		// 	.catch((err) => {
+		// 		openNotificationWithIcon('error', JSON.stringify(err));
+		// 	})
+		// 	.finally(() => {
+		// 		setLoading(false);
+		// 	});
 	};
 
 	const handleReloadTime = (time) => {
@@ -79,14 +138,14 @@ const Cards2 = () => {
 					{ xs: 6, sm: 12 },
 				]}
 			>
-				{machineShow?.map((data, index) => (
+				{machineShow?.map((FAKE_MACHINE, index) => (
 					
 					<Fragment key={index}>
 						<Col xs={24} sm={12} md={8} lg={6} xxl={4}>
-							<Card data={data} onClick={()=>{setVisible(true)}} />
+							<Card data={FAKE_MACHINE} onClick={()=>{setVisible(true)}} />
               <Drawer 
                 visible={visible} 
-                title="Detail machine"
+                title="DETAIL MACHINE"
                 closable={true}
                 maskClosable={true}
                 onClose={()=>{setVisible(false)}}
@@ -99,51 +158,51 @@ const Cards2 = () => {
               >
               <div style={{ display: 'flex', flex: 1, justifyContent: 'space-between', lineHeight: -100 }}>
                         <span style={{ textAlign: 'center' }}>Tên máy</span>
-                        <span style={{ textAlign: 'center' }}>{((data.name))}</span>
+                        <span style={{ textAlign: 'center' }}>{((FAKE_MACHINE.name))}</span>
               </div>
               <div style={{ display: 'flex', flex: 1, justifyContent: 'space-between', lineHeight: -100, backgroundColor:"#ccebd4" }}>
                         <span style={{ textAlign: 'center' }}>Dòng vào pha A1</span>
-                        <span style={{ textAlign: 'center' }}>{(Number(data.ubc) || 0).toFixed(2)}</span>
+                        <span style={{ textAlign: 'center' }}>{(Number(FAKE_MACHINE.ubc) || 0).toFixed(2)}</span>
               </div>
               <div style={{ display: 'flex', flex: 1, justifyContent: 'space-between', lineHeight: -100, }}>
                         <span style={{ textAlign: 'left' }}>Dòng vào pha A2</span>
-                        <span style={{ textAlign: 'left' }}>{(Number(data.ia) || 0).toFixed(2)}</span>
+                        <span style={{ textAlign: 'left' }}>{(Number(FAKE_MACHINE.ia) || 0).toFixed(2)}</span>
               </div>
               <div style={{ display: 'flex', flex: 1, justifyContent: 'space-between', lineHeight: -100, backgroundColor:"#ccebd4" }}>
                         <span style={{ textAlign: 'left' }}>Dòng vào pha A3</span>
-                        <span style={{ textAlign: 'left' }}>{(Number(data.ic) || 0).toFixed(2)}</span>
+                        <span style={{ textAlign: 'left' }}>{(Number(FAKE_MACHINE.ic) || 0).toFixed(2)}</span>
               </div>
               <div style={{ display: 'flex', flex: 1, justifyContent: 'space-between', lineHeight: -100, }}>
                         <span style={{ textAlign: 'left' }}>Điện áp vào V1</span>
-                        <span style={{ textAlign: 'left' }}>{(Number(data.uab) || 0).toFixed(2)}</span>
+                        <span style={{ textAlign: 'left' }}>{(Number(FAKE_MACHINE.uab) || 0).toFixed(2)}</span>
               </div>
               <div style={{ display: 'flex', flex: 1, justifyContent: 'space-between', lineHeight: -100, backgroundColor:"#ccebd4"}}>
                         <span style={{ textAlign: 'left' }}>Điện áp vào V2</span>
-                        <span style={{ textAlign: 'left' }}>{(Number(data.uca) || 0).toFixed(2)}</span>
+                        <span style={{ textAlign: 'left' }}>{(Number(FAKE_MACHINE.uca) || 0).toFixed(2)}</span>
               </div>
               <div style={{ display: 'flex', flex: 1, justifyContent: 'space-between', lineHeight: -100, }}>
                         <span style={{ textAlign: 'left' }}>Điện áp vào V3</span>
-                        <span style={{ textAlign: 'left' }}>{(Number(data.ib) || 0).toFixed(2)}</span>
+                        <span style={{ textAlign: 'left' }}>{(Number(FAKE_MACHINE.ib) || 0).toFixed(2)}</span>
               </div>
               <div style={{ display: 'flex', flex: 1, justifyContent: 'space-between', lineHeight: -100, backgroundColor:"#ccebd4" }}>
                         <span style={{ textAlign: 'left' }}>Tốc độ ra dây</span>
-                        <span style={{ textAlign: 'left' }}>{(Number(data.wire_v) || 0).toFixed(2)}</span>
+                        <span style={{ textAlign: 'left' }}>{(Number(FAKE_MACHINE.wire_v) || 0).toFixed(2)}</span>
               </div>
               <div style={{ display: 'flex', flex: 1, justifyContent: 'space-between', lineHeight: -100, }}>
                         <span style={{ textAlign: 'left' }}>Lượng dây tiêu thụ </span>
-                        <span style={{ textAlign: 'left' }}>{(Number(data.wire_consumption) || 0).toFixed(2)}</span>
+                        <span style={{ textAlign: 'left' }}>{(Number(FAKE_MACHINE.wire_consumption) || 0).toFixed(2)}</span>
               </div>
               <div style={{ display: 'flex', flex: 1, justifyContent: 'space-between', lineHeight: -100, backgroundColor:"#ccebd4"}}>
                         <span style={{ textAlign: 'left' }}>Điện năng tiêu hao thực tế</span>
-                        <span style={{ textAlign: 'left' }}>{(Number(data.powerConsumption) || 0).toFixed(2)}</span>
+                        <span style={{ textAlign: 'left' }}>{(Number(FAKE_MACHINE.powerConsumption) || 0).toFixed(2)}</span>
               </div>
               <div style={{ display: 'flex', flex: 1, justifyContent: 'space-between', lineHeight: -100, }}>
                         <span style={{ textAlign: 'left' }}>Dòng ra</span>
-                        <span style={{ textAlign: 'left' }}>{(Number(data.udc) || 0).toFixed(2)}</span>
+                        <span style={{ textAlign: 'left' }}>{(Number(FAKE_MACHINE.udc) || 0).toFixed(2)}</span>
               </div>
               <div style={{ display: 'flex', flex: 1, justifyContent: 'space-between', lineHeight: -100, backgroundColor:"#ccebd4"}}>
                         <span style={{ textAlign: 'left' }}>Áp ra</span>
-                        <span style={{ textAlign: 'left' }}>{(Number(data.idc) || 0).toFixed(2)}</span>
+                        <span style={{ textAlign: 'left' }}>{(Number(FAKE_MACHINE.idc) || 0).toFixed(2)}</span>
               </div>
               </div>
               </Drawer>

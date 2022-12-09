@@ -16,21 +16,6 @@ function Device() {
   return (
     <div>
       <h1>DEVICE</h1>
-
-      {/* <Table striped bordered hover>
-        <thead>
-          <tr class="table-primary">
-            <th scope="col">Queue</th>
-            <th scope="col">Connect</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr class="table-primary">
-            <td>{device.mac_address}</td>
-            <td>{device.isConnect.toString()}</td>
-          </tr>
-        </tbody>
-      </Table> */}
       <table
         style={{
           fontFamily: "Arial, Helvetica, sans-serif",
@@ -47,7 +32,7 @@ function Device() {
                       paddingTop: "12px",
                       paddingBottom: "12px",
                       textAlign: "left",
-                      backgroundColor: "#d19e45",
+                      backgroundColor: "#9098d1",
                       color: "white"}}
             >
               Địa chỉ Ip
@@ -59,7 +44,7 @@ function Device() {
                       paddingTop: "12px",
                       paddingBottom: "12px",
                       textAlign: "left",
-                      backgroundColor: "#d19e45",
+                      backgroundColor: "#9098d1",
                       color: "white"}}
             >
               Địa chỉ Mac
@@ -71,7 +56,7 @@ function Device() {
                       paddingTop: "12px",
                       paddingBottom: "12px",
                       textAlign: "left",
-                      backgroundColor: "#d19e45",
+                      backgroundColor: "#9098d1",
                       color: "white"}}
             >
               Internet Connections
