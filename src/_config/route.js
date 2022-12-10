@@ -19,7 +19,7 @@ export const ROUTES = {
 	HOME: '',
 	MONITOR: 'monitor',
 	LOGIN: 'login',
-	SETTING: 'setting',
+	SETTING: 'cai-dat',
 
 };
 

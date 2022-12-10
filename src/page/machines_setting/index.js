@@ -42,7 +42,7 @@ const TabsMenu = React.memo(() => {
     }, [path, pathname])
 
     const _handleChangeTab = (key) => {
-        console.log("Key Trang", key);
+        console.log("Trang", key);
         history.push(key);
     }
     return (

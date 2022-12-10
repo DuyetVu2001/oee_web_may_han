@@ -18,7 +18,7 @@ const App = () => {
                 <Tabs.TabPane tab={<TabSpan text='Thông tin thiết bị' />} key="1">
                     <Device />
                 </Tabs.TabPane>
-                <Tabs.TabPane tab={<TabSpan text='Thông tin Queue' />} key="2">
+                <Tabs.TabPane tab={<TabSpan text='Thông tin Hàng đợi' />} key="2">
                     <Queue />
                 </Tabs.TabPane>
             </Tabs>

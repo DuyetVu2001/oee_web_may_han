@@ -15,7 +15,7 @@ function Device() {
 
   return (
     <div>
-      <h1>DEVICE</h1>
+      {/* <h1>DEVICE</h1> */}
       <table
         style={{
           fontFamily: "Arial, Helvetica, sans-serif",
@@ -35,7 +35,7 @@ function Device() {
                       backgroundColor: "#9098d1",
                       color: "white"}}
             >
-              Địa chỉ Ip
+              Địa chỉ IP
             </th>
             <th
               style={{  
@@ -47,7 +47,7 @@ function Device() {
                       backgroundColor: "#9098d1",
                       color: "white"}}
             >
-              Địa chỉ Mac
+              Địa chỉ MAC
             </th>
             <th
               style={{  
@@ -59,7 +59,7 @@ function Device() {
                       backgroundColor: "#9098d1",
                       color: "white"}}
             >
-              Internet Connections
+              Trạng thái kết nối
             </th>
           </tr>
         </thead>
@@ -68,6 +68,7 @@ function Device() {
             <td>{device.ip}</td>
             <td>{device.mac_address}</td>
             <td>{device.isConnect.toString()}</td>
+            {/* <td>{device.isConnect.toString() === false ? "Mất kết nối" : "Đã kết nối"}</td> */}
           </tr>
         </tbody>
       </table>

@@ -15,7 +15,7 @@ function Queue() {
 
   return (
     <div>
-      <h1>QUEUE</h1>
+      {/* <h1>Hàng đợi</h1> */}
       <table
         style={{
           fontFamily: "Arial, Helvetica, sans-serif",
@@ -35,7 +35,7 @@ function Queue() {
                       backgroundColor: "#9098d1",
                       color: "white"}}
             >
-              Queue
+              Hàng đợi
             </th>
             <th
               style={{  
