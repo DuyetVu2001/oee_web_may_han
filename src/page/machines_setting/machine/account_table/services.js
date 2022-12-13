@@ -17,7 +17,7 @@ export const getPostForm = (body) => apiClient.get(`${ENDPOINT}/post`, body);
 //
 export const updateListColumn = (body) => apiClient.patch(`${ENDPOINT}/column`, body);
 
-export const get = (body) => axios.get(`${TEST_HOST}/machines`, body);
+export const get = (body) => axios.get(`${TEST_HOST}/machines/machine-list`, body);
 export const post = (body) => axios.post(`${TEST_HOST}/machines`, body);
 export const patch = (body) => axios.put(`${TEST_HOST}/machines`, body);
 export const deleteMany = (params) => axios.delete(`${TEST_HOST}/machines`, params);

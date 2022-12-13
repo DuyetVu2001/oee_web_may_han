@@ -67,8 +67,8 @@ function Device() {
           <tr style={{cursor:"pointer"}}>
             <td>{device.ip}</td>
             <td>{device.mac_address}</td>
-            <td>{device.isConnect.toString()}</td>
-            {/* <td>{device.isConnect.toString() === false ? "Mất kết nối" : "Đã kết nối"}</td> */}
+            {/* <td>{device.isConnect.toString()}</td> */}
+            <td>{device.isConnect.toString() === "true" ? "Đã kết nối" : "Mất kết nối"}</td>
           </tr>
         </tbody>
       </table>

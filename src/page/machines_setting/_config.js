@@ -6,7 +6,7 @@ import loadable from "helper/router/loadable";
 
 const PAGE_ROUTER = {
     HOME_SETTING : "",
-    NET_SETTING:"cai-dat-mang",
+    NET_SETTING:"net-setting",
 }
 
 const homeSetting = loadable(()=>import('./machine'))

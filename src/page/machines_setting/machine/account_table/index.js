@@ -20,7 +20,7 @@ import {
 	requestEdit,
 	requestTable,
 } from './state/table';
-import { Button, Tooltip } from 'antd';
+import { Button, Pagination, Tooltip } from 'antd';
 import { PlusOutlined, ReloadOutlined } from '@ant-design/icons';
 import { columnInitTable } from './const';
 
@@ -63,7 +63,11 @@ const TableFunction = () => {
 			() => _requestDataTable(),
 			() => setShowDetail(false)
 		);
-
+			// change Pagination
+	const _handleChangePage = (page, number_of_page) => {
+		requestTable(dispatchTable, filter, { page, number_of_page })
+	};
+	
 	return (
 		<div style={{}}>
 			<CardCustom
@@ -100,6 +104,16 @@ const TableFunction = () => {
 						onClick: () => setShowDetail({ data: r, type: 'EDIT' }),
 					})}
 				/>
+				<Pagination
+                    showSizeChanger
+                    pageSizeOptions={[5, 10, 15, 20, 25, 50, 100]}
+                    style={{ marginTop: 10, float: 'right' }}
+                    current={pageInfo.page}
+                    pageSize={Number(pageInfo.number_of_page || 15)}
+                    total={pageInfo.total}
+                    showQuickJumper
+                    onChange={_handleChangePage}
+                />
 			</CardCustom>
 
 			{/* modal */}

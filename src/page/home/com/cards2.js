@@ -1,4 +1,4 @@
-import { Button, Col, Drawer, Row, Skeleton, Space, Switch } from 'antd';
+import { AutoComplete, Button, Col, Drawer, Form, Row, Skeleton, Space, Switch } from 'antd';
 import axios from 'axios';
 import { openNotificationWithIcon } from 'helper/request/notification_antd';
 import React, { Fragment, useState } from 'react';
@@ -7,6 +7,7 @@ import { BtnTus } from 'com/btn_tutorial';
 import ReloadBtn from 'com/reload_btn';
 import { TEST_HOST } from '_config/constant';
 import { useHistory } from 'react-router-dom';
+import { ReloadOutlined } from '@ant-design/icons';
 
 const LOCAL_STORAGE_UNIQUE_KEY = 'cards_reload_time';
 const FAKE_MACHINE=[
@@ -78,17 +79,17 @@ const Cards2 = () => {
 		localStorage.getItem(LOCAL_STORAGE_UNIQUE_KEY) || 10
 	);
   
-  const [visible,setVisible] = useState(false);
+  const [visible,setVisible] = useState({data: {},open: false});
 
 	React.useEffect(() => {
 		_requestRealtimeData();
-		const inter = setInterval(() => {
-			_requestRealtimeData();
-		}, 1000 * reloadTime);
+		// const inter = setInterval(() => {
+		// 	_requestRealtimeData();
+		// }, 1000 * reloadTime);
 
-		return () => {
-			clearInterval(inter);
-		};
+		// return () => {
+		// 	clearInterval(inter);
+		// };
 	}, [reloadTime]);
 
 	const _requestRealtimeData = () => {
@@ -111,13 +112,8 @@ const Cards2 = () => {
 		localStorage.setItem(LOCAL_STORAGE_UNIQUE_KEY, time);
 	};
 
-	const handleRedirect = (machine_id) => {
 
-		// history.push(`/machines/machine-info?machineId=${id}`);
-		history.push(`/monitor?machineId=${machine_id}`);
-		// console.log("ID :", id);
-	};
-
+  const [form] = Form.useForm();
 	return (
 		<div
 			style={{ margin: 'auto', overflow: 'hidden', padding: 8, paddingTop: 0 }}
@@ -142,83 +138,7 @@ const Cards2 = () => {
 					
 					<Fragment key={index}>
 						<Col xs={24} sm={12} md={8} lg={6} xxl={4}>
-							<Card data={data} onClick={()=>{setVisible(true)}} />
-              <Drawer 
-                visible={visible}
-                title={
-                  <div  style={{fontSize:"22px"}}>Thông số chi tiết : <span>{((data.name))}</span></div>
-                }
-                closable={true}
-                maskClosable={true}
-                onClose={()=>{setVisible(false)}}
-                placement="right"
-                height="400px"
-                width="500px"
-                extra={
-                  <Space>
-                    <Button>abc</Button>
-                  </Space>
-                }
-              >
-              <div  style={{fontSize:"22px"}} >
-              <div style={{ border: '2px solid #ddd', padding: 10, margin: 5, borderRadius: 10, position: 'relative' }}>
-                <div style={{ display: 'flex', flex: 1, justifyContent: 'space-between', lineHeight: -100 }}>
-                        <span style={{ textAlign: 'center' }}>Dòng vào pha A1</span>
-                        <span style={{ textAlign: 'center' }}>{(Number(data.ia) || 0).toFixed(2)} (A)</span>
-                </div>
-                <div style={{ display: 'flex', flex: 1, justifyContent: 'space-between', lineHeight: -100, }}>
-                        <span style={{ textAlign: 'left' }}>Dòng vào pha A2</span>
-                        <span style={{ textAlign: 'left' }}>{(Number(data.ib) || 0).toFixed(2)} (A)</span>
-                </div>
-                <div style={{ display: 'flex', flex: 1, justifyContent: 'space-between', lineHeight: -100 }}>
-                        <span style={{ textAlign: 'left' }}>Dòng vào pha A3</span>
-                        <span style={{ textAlign: 'left' }}>{(Number(data.ic) || 0).toFixed(2)} (A)</span>
-                </div>
-              </div>
-              <div style={{ border: '2px solid #ddd', padding: 10, margin: 5, borderRadius: 10, position: 'relative' }}>
-
-              
-                <div style={{ display: 'flex', flex: 1, justifyContent: 'space-between', lineHeight: -100, }}>
-                        <span style={{ textAlign: 'left' }}>Điện áp vào V1</span>
-                        <span style={{ textAlign: 'left' }}>{(Number(data.uab) || 0).toFixed(2)} (V)</span>
-                </div>
-                <div style={{ display: 'flex', flex: 1, justifyContent: 'space-between', lineHeight: -100}}>
-                        <span style={{ textAlign: 'left' }}>Điện áp vào V2</span>
-                        <span style={{ textAlign: 'left' }}>{(Number(data.ubc) || 0).toFixed(2)} (V)</span>
-                </div>
-                <div style={{ display: 'flex', flex: 1, justifyContent: 'space-between', lineHeight: -100, }}>
-                        <span style={{ textAlign: 'left' }}>Điện áp vào V3</span>
-                        <span style={{ textAlign: 'left' }}>{(Number(data.uca) || 0).toFixed(2)} (V)</span>
-                </div>
-              </div>
-              <div style={{ border: '2px solid #ddd', padding: 10, margin: 5, borderRadius: 10, position: 'relative' }}>
-                <div style={{ display: 'flex', flex: 1, justifyContent: 'space-between', lineHeight: -100 }}>
-                        <span style={{ textAlign: 'left' }}>Tốc độ ra dây</span>
-                        <span style={{ textAlign: 'left' }}>{(Number(data.wire_v) || 0).toFixed(2)} (m/phút)</span>
-                </div>
-                <div style={{ display: 'flex', flex: 1, justifyContent: 'space-between', lineHeight: -100, }}>
-                        <span style={{ textAlign: 'left' }}>Lượng dây tiêu thụ </span>
-                        <span style={{ textAlign: 'left' }}>{(Number(data.wire_consumption) || 0).toFixed(2)} (kg)</span>
-                </div>
-                <div style={{ display: 'flex', flex: 1, justifyContent: 'space-between', lineHeight: -100}}>
-                        <span style={{ textAlign: 'left' }}>Điện năng tiêu hao thực tế</span>
-                        <span style={{ textAlign: 'left' }}>{(Number(data.powerConsumption) || 0).toFixed(2)} (kWh)</span>
-              </div>
-              </div>
-              
-              <div style={{ border: '2px solid #ddd', padding: 10, margin: 5, borderRadius: 10, position: 'relative' }}>
-                <div style={{ display: 'flex', flex: 1, justifyContent: 'space-between', lineHeight: -100, }}>
-                        <span style={{ textAlign: 'left' }}>Dòng ra</span>
-                        <span style={{ textAlign: 'left' }}>{(Number(data.idc) || 0).toFixed(2)} (A)</span>
-                </div>
-                <div style={{ display: 'flex', flex: 1, justifyContent: 'space-between', lineHeight: -100}}>
-                        <span style={{ textAlign: 'left' }}>Áp ra</span>
-                        <span style={{ textAlign: 'left' }}>{(Number(data.udc) || 0).toFixed(2)} (V)</span>
-                </div>
-              </div>
-              
-              </div>
-              </Drawer>
+							<Card data={data} onClick={()=>{setVisible({data, open: true})}} />
 						</Col>
 					</Fragment>
 				))
@@ -226,20 +146,105 @@ const Cards2 = () => {
 			</Row>
 
 			{!machineShow ? <Skeleton /> : null}
+      <Drawer 
+                visible={visible.open}
+                title={
+                  <div  style={{fontSize:"22px"}}>Thông số chi tiết : <span>{((visible?.data.name))}</span></div>
+                }
+                closable={true}
+                maskClosable={true}
+                onClose={()=>{setVisible({ data: {}, open: false})}}
+                placement="right"
+                height="400px"
+                width="500px"
+              >
+              <div
+            style={{
+              width: '100%',
+              textAlign: 'right',
+              background: '#fff',
+              borderRadius: '0 0 4px 4px',
+            }}
+          >
+            <Button 
+              type="primary"
+              style={{
+                marginRight: 8,
+                
+              }}
+              onClick={() => form.resetFields()}
+            >
+              Reload
+            </Button>
+          </div>
+              <div  style={{fontSize:"22px"}} >
+              
+              <div style={{ border: '2px solid #ddd', padding: 10, margin: 5, borderRadius: 10, position: 'relative' }}>
+                <div style={{ display: 'flex', flex: 1, justifyContent: 'space-between', lineHeight: -100 }}>
+                        <span style={{ textAlign: 'center' }}>Dòng vào pha A1</span>
+                        <span style={{ textAlign: 'center' }}>{(Number(visible?.data.ia) || 0).toFixed(2)} (A)</span>
+                </div>
+                <div style={{ display: 'flex', flex: 1, justifyContent: 'space-between', lineHeight: -100, }}>
+                        <span style={{ textAlign: 'left' }}>Dòng vào pha A2</span>
+                        <span style={{ textAlign: 'left' }}>{(Number(visible?.data.ib) || 0).toFixed(2)} (A)</span>
+                </div>
+                <div style={{ display: 'flex', flex: 1, justifyContent: 'space-between', lineHeight: -100 }}>
+                        <span style={{ textAlign: 'left' }}>Dòng vào pha A3</span>
+                        <span style={{ textAlign: 'left' }}>{(Number(visible?.data.ic) || 0).toFixed(2)} (A)</span>
+                </div>
+              </div>
+              <div style={{ border: '2px solid #ddd', padding: 10, margin: 5, borderRadius: 10, position: 'relative' }}>
 
+              
+                <div style={{ display: 'flex', flex: 1, justifyContent: 'space-between', lineHeight: -100, }}>
+                        <span style={{ textAlign: 'left' }}>Điện áp vào V1</span>
+                        <span style={{ textAlign: 'left' }}>{(Number(visible?.data.uab) || 0).toFixed(2)} (V)</span>
+                </div>
+                <div style={{ display: 'flex', flex: 1, justifyContent: 'space-between', lineHeight: -100}}>
+                        <span style={{ textAlign: 'left' }}>Điện áp vào V2</span>
+                        <span style={{ textAlign: 'left' }}>{(Number(visible?.data.ubc) || 0).toFixed(2)} (V)</span>
+                </div>
+                <div style={{ display: 'flex', flex: 1, justifyContent: 'space-between', lineHeight: -100, }}>
+                        <span style={{ textAlign: 'left' }}>Điện áp vào V3</span>
+                        <span style={{ textAlign: 'left' }}>{(Number(visible?.data.uca) || 0).toFixed(2)} (V)</span>
+                </div>
+              </div>
+              <div style={{ border: '2px solid #ddd', padding: 10, margin: 5, borderRadius: 10, position: 'relative' }}>
+                <div style={{ display: 'flex', flex: 1, justifyContent: 'space-between', lineHeight: -100 }}>
+                        <span style={{ textAlign: 'left' }}>Tốc độ ra dây</span>
+                        <span style={{ textAlign: 'left' }}>{(Number(visible?.data.wire_v) || 0).toFixed(2)} (m/phút)</span>
+                </div>
+                <div style={{ display: 'flex', flex: 1, justifyContent: 'space-between', lineHeight: -100, }}>
+                        <span style={{ textAlign: 'left' }}>Lượng dây tiêu thụ </span>
+                        <span style={{ textAlign: 'left' }}>{(Number(visible?.data.wire_consumption) || 0).toFixed(2)} (kg)</span>
+                </div>
+                <div style={{ display: 'flex', flex: 1, justifyContent: 'space-between', lineHeight: -100}}>
+                        <span style={{ textAlign: 'left' }}>Điện năng tiêu hao thực tế</span>
+                        <span style={{ textAlign: 'left' }}>{(Number(visible?.data.powerConsumption) || 0).toFixed(2)} (kWh)</span>
+              </div>
+              </div>
+              
+              <div style={{ border: '2px solid #ddd', padding: 10, margin: 5, borderRadius: 10, position: 'relative' }}>
+                <div style={{ display: 'flex', flex: 1, justifyContent: 'space-between', lineHeight: -100, }}>
+                        <span style={{ textAlign: 'left' }}>Dòng ra</span>
+                        <span style={{ textAlign: 'left' }}>{(Number(visible?.data.idc) || 0).toFixed(2)} (A)</span>
+                </div>
+                <div style={{ display: 'flex', flex: 1, justifyContent: 'space-between', lineHeight: -100}}>
+                        <span style={{ textAlign: 'left' }}>Áp ra</span>
+                        <span style={{ textAlign: 'left' }}>{(Number(visible?.data.udc) || 0).toFixed(2)} (V)</span>
+                </div>
+              </div>
+              
+              </div>
+              </Drawer>
 		</div>
 	);
 };
 
 const Card = ({ data, onClick = () => {} }) => {
 	// const history = useHistory();
-  const onChange = (checked) => {
-    console.log(`switch to ${checked}`);
-
-  };
 	return (
 		<div
-			// onClick={() => history.push(`/monitor/machine-info?machineId=${data.machineId || ''}`)}
 			onClick={onClick}
 			style={{
 				borderRadius: 10,
@@ -255,17 +260,16 @@ const Card = ({ data, onClick = () => {} }) => {
             }}>
                 <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', margin: '3px 0' }}>
                     <div style={{ fontSize: '1.5vw', fontWeight: '600' }}>{data.name || 'Not found machine'} </div>
-                    {/* <Switch defaultChecked onChange={onChange} unCheckedChildren="Off" checkedChildren="Off"/> */}
                 </div>
                 <div style={{
                     flex: 1,
-                    background: data?.allowReading === '1' ? 'green' : '#aaa',
+                    background: data?.errorCode !== "0" ? 'red' : (data?.status === "1" ? "green" : "orange"),
                     borderRadius: 3,
                     display: 'flex', justifyContent: 'center', alignItems: 'center'
                 }}>
                     <span style={{ fontSize: '4.5vw', lineHeight: -10, color: '#fff', fontWeight: '600' }}>{(Number(data.powerConsumption) || 0).toFixed(2)}</span>
                 </div>
-                <div style={{ background: '#dedede', fontSize: '1.8vw', fontWeight: '600', padding: '0px 20px', }}>
+                <div style={{ background: '#dedede', fontSize: '28px', fontWeight: '600', padding: '0px 20px', }}>
                     <div style={{ display: 'flex', flex: 1, justifyContent: 'space-between', lineHeight: -10, }}>
                         <span style={{ textAlign: 'left' }}>Dòng ra</span>
                         <span style={{ textAlign: 'left' }}>{(Number(data.idc) || 0).toFixed(2)}(A)</span>
